@@ -1,1 +1,0 @@
-console.log("Drake's First Project in VS Code");
