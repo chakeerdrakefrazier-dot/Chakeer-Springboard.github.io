@@ -2,3 +2,7 @@ Bataman
 Avengers
 Superman
 Hulk
+Wonder Woman
+Storm 
+Wolverine
+DeadPool
