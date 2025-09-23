@@ -34,20 +34,40 @@
             Pursuing a career in software development allows me to build solutions that are both innovative and practical while expressing my creative side. Outside of work, I enjoy spending time with my family, developing personal side projects, riding my motorcycle, and teaching third graders at our local church.
     </section>
 
-    <section>
-            <h1 style="text-align: center;">Looking to get in contact? Just fill out the form below.</h1>              
+     <section>
+            <h2 style="text-align: center;">Looking to get in contact? Just fill out the form below.</h2>
                 <form style="text-align: center;" action="mailto:chakeer.drakefrazier@gmail.com " method="post" enctype="text/plain">
-                     <label for="name">Name:</label><br>
-                        <input type="text" id="name" name="name" size="40"><br>
-                    
-                    <label for="email">Email:</label><br>
-                        <input type="email" id="email" name="email" size="40"><br>
                    
-                    <label for="message">Message:</label><br>
-                        <textarea id="message" name="message"></textarea><br>
-                            <input type="submit" value="Submit" size="40">
+                    <Div class="radio-buttons">
+                        <details>
+                            <summary>Reason for Contacting: Select an option</summary>
+                            <label><input type="radio" name="option" value="hire"> Job Offer</label><br>
+                            <label><input type="radio" name="option" value="collaboration"> Collaboration</label><br>
+                            <label><input type="radio" name="option" value="project"> Project Inquiry</label><br>
+                            <label><input type="radio" name="option" value="other"> Other</label>
+                        </details>
+                    </Div>
+
+                    <label for="name"></label><br>
+                        <input placeholder="Name" id="name" type="text" name="name" size="40"><br>
+                    
+                    <label for="email"></label><br>
+                        <input required placeholder="Email Address" id="email" type="email" name="email" size="40"><br>
+                   
+                    <label for="phone"></label><br>
+                        <input placeholder="Phone Number" id="phone" type="tel" name="phone" size="40"><br>
+
+                    <label for="organization"></label><br>
+                        <input placeholder="Organization" id="organization" type="text" name="organization" size="40"><br>
+                        
+                    <label for="Website"></label> <br>
+                        <input placeholder="Website" id="Website" type="url" name="website" size="40"><br>
+
+                    <label for="message"></label><br>
+                        <textarea placeholder="Type your message here" id="message" name="message"></textarea><br>
+                            <button type="submit">Send</button>
                 </form>
-    </section>
+        </section>
 
  </main>
     
