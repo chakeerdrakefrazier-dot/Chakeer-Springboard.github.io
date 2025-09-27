@@ -1,0 +1,23 @@
+p {color: #000000; 
+    font-size: 18px;
+    font-family: Tommorow, sans-serif;
+    text-align: center;
+    font-weight: bold; 
+    text-align: center;
+    line-height: normal;
+}
+
+
+h1 {color: #215a8f;
+    font-family: Archivo, sans-serif;
+    font-style: normal;
+    font-size: 36px; 
+    text-align: center;
+}
+
+h2 {color: #215a8f;
+    font-family: Archivo, sans-serif;
+    font-style: normal;
+    font-size: 28px; 
+    text-align: center;
+}
