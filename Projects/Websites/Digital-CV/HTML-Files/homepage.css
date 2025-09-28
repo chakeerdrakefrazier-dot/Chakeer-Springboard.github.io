@@ -30,7 +30,7 @@ nav {
     box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
     display: inline-block; /* Ensure list items are inline-block for proper spacing */
     text-align: center; /* Center align text for a balanced look */
-    flex: 1; /* Allow list items to grow and fill available space */
+    /* keep list items inline; remove flex to avoid layout issues */
     min-width: 100px; /* Ensure a minimum width for better usability on smaller screens */
     max-width: 150px; /* Limit the maximum width for better readability */
     border-radius: 4px; /* Rounded corners for a modern look */
@@ -59,7 +59,7 @@ nav {
 /* Styling for the entire document */
 body
 {
-    font-family: Tommorow, sans-serif; /
+    font-family: Tommorow, sans-serif;
     font-size: 18px; /* Base font size */
     line-height: 2; /* Increase line height for better readability */
     color: #ffffff; 
@@ -74,20 +74,8 @@ html
     margin: 0; /* Remove default margin */
     padding: 0; /* Remove default padding */
     box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
-
-    .background-overlay {
-        position: relative;
-        height: 400px;
-        background: url("Background.png") no-repeat center center fixed; /* Set the background image */
-        background-size: cover; /* Ensure the background image covers the entire viewport */}
-
-    .background::before {
-    content: "";
-    position: absolute;
-    inset: 0; /* covers whole hero */
-    background: #00000080; /* semi-transparent overlay */
-    }
 }
+
 
 /* styling for images */
 div.image-container {
@@ -158,7 +146,7 @@ button
     margin-bottom: 10px; /* Add space below buttons for better readability */
     box-shadow: 3px 3px 5px #341f3f; /* Add a subtle shadow for depth */
     border-radius: 250px; /* Rounded corners for a modern look */
-    display: block;        /* makes it take up full width like a div */
+    display: inline-block; /* keep buttons inline unless explicitly made block */
     margin: 0 auto;        /* auto left/right centers */
 }
 
@@ -302,8 +290,7 @@ li
 
 
 /* Styling for table */
-table
-{
+table {
     border: 1px solid #215a8f; /* Add a border to the table for better visibility */
     border-radius: 8px; /* Rounded corners for a modern look */
     box-shadow: 3px 3px 5px #341f3f;
@@ -314,37 +301,38 @@ table
     margin-right: auto; /* Center the table */
     margin-bottom: 1.5rem; /* Add space below the table for better readability */
     border-collapse: collapse; /* Collapse borders for a cleaner look */
+}
 
-        caption
-        {
-            color: #ffffff;
-            font-size: 1.5rem; 
-            font-weight: 300;
-            text-transform: uppercase; /* Convert text to uppercase for visual prominence */
-            font-style: italic; /* Italicize for differentiation */
-            font-family: Archivo, sans-serif;
-            text-align: center;
-        }
-        td, th, tfoot
-        {
-            border: 1px solid #215a8f; /* Add borders to table cells for better visibility */
-            padding: 10px; /* Add padding for better readability */
-            text-align: left; /* Left align text for better readability */
-            font-family: Tommorow, sans-serif;
-            font-size: 1rem; /* Set a slightly smaller font size for table text */
-            color: #ffffff;
-            font-weight: 200; /* Make header text bold for emphasis */
-        }
-        th
-        {
-            background-color: #215a8f; /* Darker background for header cells */
-            color: #ffffff; /* White text for contrast */
-        }
-        tfoot
-        {
-            background-color: #8652a1; /* Darker background for footer cells */
-            color: #ffffff; /* White text for contrast */
-        }
+table caption {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-transform: uppercase; /* Convert text to uppercase for visual prominence */
+    font-style: italic; /* Italicize for differentiation */
+    font-family: Archivo, sans-serif;
+    text-align: center;
+}
+
+table td,
+table th,
+table tfoot {
+    border: 1px solid #215a8f; /* Add borders to table cells for better visibility */
+    padding: 10px; /* Add padding for better readability */
+    text-align: left; /* Left align text for better readability */
+    font-family: Tommorow, sans-serif;
+    font-size: 1rem; /* Set a slightly smaller font size for table text */
+    color: #ffffff;
+    font-weight: 200; /* Make header text bold for emphasis */
+}
+
+table th {
+    background-color: #215a8f; /* Darker background for header cells */
+    color: #ffffff; /* White text for contrast */
+}
+
+table tfoot {
+    background-color: #8652a1; /* Darker background for footer cells */
+    color: #ffffff; /* White text for contrast */
 }
 /* Styling for project gallery */
 .project-gallery
@@ -414,7 +402,7 @@ form summary
     border-radius: 20px; /* Rounded corners for a modern look */
     box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
     font-family: Tommorow, sans-serif;
-    font-size: 2rem; /* Set a font size for form elements */
+    font-size: 1rem; /* Set a font size for form elements */
     font-weight: 300; /* Normal weight for form text */
     background-color: #ffffff; /* Dark background color for better contrast */
     color: #215a8f; /* White text for contrast */
@@ -438,6 +426,21 @@ form input[type="submit"]:hover
     background-color: #341f3f; /* Darker background color on hover */
     box-shadow: 3px 3px 5px #215a8f; /* Add a shadow effect on hover */
 }  
+
+/* .button - anchor styled like a button */
+.button {
+    background-color: #215a8f;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 250px;
+    text-decoration: none;
+    display: inline-block;
+    font-family: Tommorow, sans-serif;
+    font-weight: 600;
+}
+.button:hover {
+    background-color: #8652a1;
+}
 
 /* Styling for footer */
 footer {
@@ -474,14 +477,11 @@ footer {
     box-shadow: 0 2px 4px #8652a1; /* Add a subtle shadow effect on hover */
 }   
 
-.copyright
-{
-   p{
+.copyright p {
     color: #215a8f; /* Color text for contrast */
     text-align: left; /* Left align text for a balanced look */
     font-family: Tommorow, sans-serif;
     font-size: 0.75rem; /* Set a slightly smaller font size for footer text */
     margin: 0; /* Remove default margin */
     padding: 5px 10px; /* Add padding for better readability */
-   };
 }
