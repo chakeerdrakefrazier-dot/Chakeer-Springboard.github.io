@@ -1,23 +1,487 @@
-p {color: #000000; 
-    font-size: 18px;
+/* Styling for navigation bar */
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;  /* stretch across screen */
+  padding: 1rem;
+  z-index: 1000;
+  backdrop-filter: blur(1px); /* blur background */
+}
+
+.navigation-bar
+{
+    list-style-type: none; /* Remove default list styling */
+    background-color: transparent; /* Transparent background for modern look */
     font-family: Tommorow, sans-serif;
-    text-align: center;
-    font-weight: bold; 
-    text-align: center;
-    line-height: normal;
+    font-size: 1rem; /* Set a font size for navigation links */
+    font-weight: 500; /* Make links slightly bolder for emphasis */
+    text-align: center; /* Center align text for a balanced look */
+    margin-bottom: 20px; /* Add space below the navigation bar for better readability */
+    padding: 0; /* Remove padding for a cleaner look */
+    margin: 0; /* Remove margin for a cleaner look */
+}
+
+.navigation-bar li
+{
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+    display: inline-block; /* Ensure list items are inline-block for proper spacing */
+    text-align: center; /* Center align text for a balanced look */
+    flex: 1; /* Allow list items to grow and fill available space */
+    min-width: 100px; /* Ensure a minimum width for better usability on smaller screens */
+    max-width: 150px; /* Limit the maximum width for better readability */
+    border-radius: 4px; /* Rounded corners for a modern look */
+}
+.navigation-bar a
+{
+    color: #ffffff; /* White text for contrast */
+    text-decoration: none; /* Remove default underline from links */
+    font-weight: 500; /* Make links slightly bolder for emphasis */
+    font-family: Archivo, sans-serif;
+    font-size: 1rem; /* Set a font size for navigation links */
+    padding: 8px 12px; /* Add padding for better usability */
+    border-radius: 4px; /* Rounded corners for a modern look */
+    transition: background-color 0.3s, box-shadow 0.3s;
+    display: inline-block; /* Ensure links are inline-block for proper spacing */
+    margin-top: 10px; /* Add space above links for better readability */
+    margin-bottom: 10px; /* Add space below links for better readability */
+    
+}
+.navigation-bar a:hover
+{
+    background-color: #215a8f; /* Darker background color on hover */
+    box-shadow: 0 2px 4px #8652a1; /* Add a subtle shadow effect on hover */
+}
+
+/* Styling for the entire document */
+body
+{
+    font-family: Tommorow, sans-serif; /
+    font-size: 18px; /* Base font size */
+    line-height: 2; /* Increase line height for better readability */
+    color: #ffffff; 
+}
+
+/* Styling for the background */
+html
+{
+    background: url("Background.png") no-repeat center center fixed; /* Set the background image */
+    background-size: cover; /* Ensure the background image covers the entire viewport */
+    height: 100%; /* Ensure the html element takes full height */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+
+    .background-overlay {
+        position: relative;
+        height: 400px;
+        background: url("Background.png") no-repeat center center fixed; /* Set the background image */
+        background-size: cover; /* Ensure the background image covers the entire viewport */}
+
+    .background::before {
+    content: "";
+    position: absolute;
+    inset: 0; /* covers whole hero */
+    background: #00000080; /* semi-transparent overlay */
+    }
+}
+
+/* styling for images */
+div.image-container {
+    text-align: center; /* Center align images for a balanced look */
+    margin-top: 20px; /* Add space above images for better readability */
+    margin-bottom: 20px; /* Add space below images for better readability */
+    padding: 0; /* Remove default padding */
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+    max-width: 800px; /* Limit the maximum width for better readability */
+    margin-left: auto; /* Center the image container */
+    margin-right: auto; /* Center the image container */        
 }
 
 
-h1 {color: #215a8f;
+/* Ensure all images are responsive */
+img 
+{
+    max-width: 100%; /* Ensure images do not exceed the width of their container */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove bottom whitespace */
+    margin-left: auto; /* Center the image */
+    margin-right: auto; /* Center the image */  
+    box-shadow: 3px 3px 5px #341f3f; /* Add a subtle shadow for depth */
+    border-radius: 8px; /* Rounded corners for a modern look */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+}
+
+/* Ensure all sections have consistent padding and margin */
+section
+{
+    padding: 20px; /* Add padding for better readability */
+    margin-bottom: 20px; /* Add space below each section */
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total    width and height */ 
+    max-width: 1200px; /* Limit the maximum width for better readability */
+    margin-left: auto; /* Center the section */
+    margin-right: auto; /* Center the section */
+}
+
+/* Styling for hero section */
+.hero {
+  position: relative;
+  background: url("Banner.png") no-repeat center center / cover;
+  height: 400px;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* covers entire section */
+}
+
+/* Styling for buttons */
+button
+{
+    background-color: #215a8f; /* Set a background color for buttons */
+    color: #ffffff; /* White text for contrast */
+    padding: 10px 20px; /* Add padding for better usability */
+    border: none; /* Remove default border */
+    border-radius: 4px; /* Rounded corners for a modern look */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    font-family: Tommorow, sans-serif;
+    font-size: 1rem; /* Set a font size for buttons */
+    font-weight: 600; /* Make button text bold for emphasis */
+    transition: background-color 0.3s, box-shadow 0.3s;
+    text-align: center; /* Center align text for a balanced look */
+    text-decoration: none; /* Remove underline from links inside buttons */
+    display: inline-block; /* Ensure buttons are inline-block for proper spacing */
+    margin-top: 10px; /* Add space above buttons for better readability */
+    margin-bottom: 10px; /* Add space below buttons for better readability */
+    box-shadow: 3px 3px 5px #341f3f; /* Add a subtle shadow for depth */
+    border-radius: 250px; /* Rounded corners for a modern look */
+    display: block;        /* makes it take up full width like a div */
+    margin: 0 auto;        /* auto left/right centers */
+}
+
+button:hover
+{
+    background-color: #8652a1; /* Darker background color on hover */
+    box-shadow: 3px 3px 5px #215a8f; /* Add a shadow effect on hover */
+}
+
+/* Styling for springboard icon */
+.springboard
+{   
+    box-shadow: 0 -2px 4px #341f3f; /* Add a subtle shadow for depth */
+    background-color: #215a8f; /* Darker background color on hover */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    font-size: 2rem;
+    font-family: Archivo, sans-serif;
+    font-weight: 500; /* Make summary text bold for emphasis */
+    text-align: center; /* Center align text for a balanced look */
+    padding: 10px;
+    border-radius: 250px; /* Rounded corners for a modern look */
+    transition: background-color 0.3s, box-shadow 0.3s;
+    margin-left: auto; /* Center the springboard icon */
+    margin-right: auto; /* Center the springboard icon */
+    margin-top: 10px; /* Add space above springboard icon for better readability */
+    margin-bottom: 10px; /* Add space below springboard icon for better readability */
+}
+.springboard:hover
+{
+    background-color: #341f3f; /* Darker background color on hover */
+    box-shadow: 3px 3px 5px #215a8f; /* Add a shadow effect on hover */
+}
+
+/* Styling for main heading */
+h1
+{
+    color: #ffffff;
+    font-size: 4rem; 
     font-family: Archivo, sans-serif;
     font-style: normal;
-    font-size: 36px; 
+    text-align: center;
+    text-shadow: 3px 3px 5px #341f3f; /* Add a drop shadow effect for emphasis */
+    text-transform: uppercase; /* Convert text to uppercase for visual prominence */
+    font-weight: 700; /* Make it bold for emphasis */
+}
+
+/* Styling for sub-heading */
+h2
+{
+    color: #ffffff;
+    font-size: 3rem; /* Set a moderate font size for sub-headings */
+    font-family: Archivo, sans-serif;
+    font-style :italic; /* Italicize for differentiation */
+    text-align: center;
+    font-weight: 600; /* Make it slightly bolder for differentiation */
+    text-transform: uppercase; /* Convert text to uppercase for visual prominence */
+    text-shadow: 3px 3px 5px #341f3f; /* Add a drop shadow effect for emphasis */
+}
+
+/* Styling for sub-sub-heading */
+h3
+{
+    color: #ffffff;
+    font-size: 2rem; 
+    font-weight: 300;
+    text-transform: uppercase; /* Convert text to uppercase for visual prominence */
+    font-style: italic; /* Italicize for differentiation */
+    font-family: Archivo, sans-serif;
     text-align: center;
 }
 
-h2 {color: #215a8f;
+h4
+{
+    color: #ffffff;
+    font-size: 1.5rem; 
+    font-weight: 300;
+    text-transform: uppercase; /* Convert text to uppercase for visual prominence */
+    font-style: italic; /* Italicize for differentiation */
     font-family: Archivo, sans-serif;
-    font-style: normal;
-    font-size: 28px; 
     text-align: center;
+}
+
+/* Styling for paragraph */
+p
+{
+    color: #ffffff;
+    font-size: 1.25rem; /* Set a font size for paragraphs */
+    margin-bottom: 1.5rem; /* Add space below paragraphs for better readability */
+    font-family: Tommorow, sans-serif;
+    font-weight: 200; /* Normal weight for body text */
+    text-align:center; /* Center align text for a balanced look */
+    line-height: 1.6; /* Increase line height for better readability */
+    letter-spacing: 0.5px; /* Slightly increase letter spacing for better readability */
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+    max-width: 800px; /* Limit the maximum width for better readability */
+    margin-left: auto; /* Center the paragraph block */
+    margin-right: auto; /* Center the paragraph block */
+    padding: 0 10px; /* Add horizontal padding for better readability on smaller screens */
+}
+
+/* Styling for hyperlinks */
+a
+{
+    color: #ffffff; /* Set link color to match headings */
+    text-decoration: none; /* Removing default underline from links */
+    font-weight: 500; /* Make links slightly bolder for emphasis */
+}
+
+/* Styling for summary element */
+summary
+{
+    cursor: pointer; /* Change cursor to pointer on hover */
+    color: #ffffff; /* Set link color to match headings */
+    font-size: 1.5rem; 
+    font-family: Archivo, sans-serif;
+    font-weight: 300; /* Make summary text bold for emphasis */
+    margin-bottom: 1rem; /* Add space below summary for better readability */
+    text-align: center; /* Center align text for a balanced look */
+    text-transform: uppercase; /* Convert text to uppercase for visual prominence */
+    font-style: italic; /* Italicize for differentiation */
+}
+summary:hover
+{
+    color: #341f3f; /* Change color on hover for interactivity */
+    text-decoration: underline; /* Underline text on hover for emphasis */
+}   
+
+
+/* Styling for list items */
+li
+{
+    color: #ffffff;
+    font-size: 1rem; /* Set a slightly smaller font size for list items */
+    margin-bottom: 0.5rem; /* Add space below list items for better readability */
+    font-family: Tommorow, sans-serif;
+    font-weight: 300; /* Normal weight for body text */
+    line-height: 1.6; /* Increase line height for better readability */
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+    max-width: 800px; /* Limit the maximum width for better readability */
+}
+
+
+/* Styling for table */
+table
+{
+    border: 1px solid #215a8f; /* Add a border to the table for better visibility */
+    border-radius: 8px; /* Rounded corners for a modern look */
+    box-shadow: 3px 3px 5px #341f3f;
+    background-color: #080022; /* Light background color for better contrast */
+    width: 100%; /* Make the table take full width of its container */
+    max-width: 800px; /* Limit the maximum width for better readability */
+    margin-left: auto; /* Center the table */
+    margin-right: auto; /* Center the table */
+    margin-bottom: 1.5rem; /* Add space below the table for better readability */
+    border-collapse: collapse; /* Collapse borders for a cleaner look */
+
+        caption
+        {
+            color: #ffffff;
+            font-size: 1.5rem; 
+            font-weight: 300;
+            text-transform: uppercase; /* Convert text to uppercase for visual prominence */
+            font-style: italic; /* Italicize for differentiation */
+            font-family: Archivo, sans-serif;
+            text-align: center;
+        }
+        td, th, tfoot
+        {
+            border: 1px solid #215a8f; /* Add borders to table cells for better visibility */
+            padding: 10px; /* Add padding for better readability */
+            text-align: left; /* Left align text for better readability */
+            font-family: Tommorow, sans-serif;
+            font-size: 1rem; /* Set a slightly smaller font size for table text */
+            color: #ffffff;
+            font-weight: 200; /* Make header text bold for emphasis */
+        }
+        th
+        {
+            background-color: #215a8f; /* Darker background for header cells */
+            color: #ffffff; /* White text for contrast */
+        }
+        tfoot
+        {
+            background-color: #8652a1; /* Darker background for footer cells */
+            color: #ffffff; /* White text for contrast */
+        }
+}
+/* Styling for project gallery */
+.project-gallery
+{
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    gap: 20px; /* Add space between items */
+    justify-content: center; /* Center items horizontally */
+    margin-bottom: 1.5rem; /* Add space below the gallery for better readability */
+}
+.project-gallery a
+{
+    text-decoration: none; /* Remove default underline from links */
+}
+.project-gallery img
+{
+    width: 400px; /* Set a fixed width for project images */
+    height: 200px; /* Set a fixed height for project images */
+    object-fit: cover; /* Ensure images cover the entire area without distortion */
+    border: 2px solid #215a8f; /* Add a border to project   images for better visibility */
+    border-radius: 8px; /* Rounded corners for a modern look */
+    box-shadow: 3px 3px 5px #341f3f;
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+}
+.project-gallery img:hover
+{
+    transform: scale(1.05); /* Slightly enlarge image on hover */
+    box-shadow: 5px 5px 10px #8652a1;/* Add a stronger shadow effect on hover */  
+}               
+
+/* styling for radio buttons and checkboxes */
+input[type="radio"],
+input[type="checkbox"]
+{
+    margin-right: 10px; /* Add space to the right of radio buttons and checkboxes */
+    transform: scale(2); /* Slightly enlarge for better usability */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    font-family: Tommorow, sans-serif;
+}       
+
+/* Styling for form */
+form
+{
+    color: #ffffff;
+    font-family: Tommorow, sans-serif;
+    font-size: 1rem; /* Set a font size for form text */
+    margin-bottom: 1.5rem; /* Add space below the form for better readability */
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+    max-width: 800px; /* Limit the maximum width for better readability */
+    margin-left: auto; /* Center the form */
+    margin-right: auto; /* Center the form */
+    padding: 0 10px; /* Add horizontal padding for better readability on smaller screens */
+    text-align: center; /* Center align text for a balanced look */
+}
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form input[type="url"],
+form textarea,
+form select,
+form summary
+{
+    width: 100%; /* Make form elements take full width of their container */
+    padding: 2px; /* Add padding for better usability */
+    margin-bottom: 1rem; /* Add space below form elements for better readability */
+    border: 1px solid #215a8f; /* Add a border to form elements for better visibility */
+    border-radius: 20px; /* Rounded corners for a modern look */
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+    font-family: Tommorow, sans-serif;
+    font-size: 2rem; /* Set a font size for form elements */
+    font-weight: 300; /* Normal weight for form text */
+    background-color: #ffffff; /* Dark background color for better contrast */
+    color: #215a8f; /* White text for contrast */
+    box-shadow: 3px 3px 5px #341f3f;
+    transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition for focus effects */
+}
+form input[type="submit"]
+{
+    background-color: #215a8f; /* Set a background color for the submit button */
+    color: #ffffff; /* White text for contrast */
+    padding: 10px 20px; /* Add padding for better usability */
+    border: none; /* Remove default border */
+    border-radius: 4px; /* Rounded corners for a modern look */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    font-family: Tommorow, sans-serif;
+    font-size: 1rem; /* Set a font size for the submit button */
+    font-weight: 600; /* Make button text bold for emphasis */
+}
+form input[type="submit"]:hover 
+{
+    background-color: #341f3f; /* Darker background color on hover */
+    box-shadow: 3px 3px 5px #215a8f; /* Add a shadow effect on hover */
+}  
+
+/* Styling for footer */
+footer {
+    display: flex;                 /* put children (nav + p) in a row */
+    justify-content: space-between;/* nav left, links right */
+    align-items: center;            /* vertical alignment */
+    padding: 10px 20px;            /* some spacing around */
+}
+
+/* Styling for social media links */
+
+.social-media-links a
+{
+    margin: 0 10px; /* Add horizontal space between links */
+    text-decoration: none; /* Remove default underline from links */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+    display: inline-block; /* Ensure links are inline-block for proper spacing */
+    margin-top: 10px; /* Add space above social media links for better readability */
+    margin-bottom: 10px; /* Add space below social media links for better readability */
+}
+.social-media-links img
+{
+    width: 50px; /* Set a fixed width for social media icons */
+    height: 50px; /* Set a fixed height for social media icons */
+    object-fit: contain; /* Ensure icons maintain their aspect ratio */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+    box-shadow: 3px 3px 5px #8652a1; /* Add a subtle shadow for depth */
+    border-radius: 50px; /* Rounded corners for a modern look */ 
+}
+
+.social-media-links img:hover
+{
+    transform: scale(1.1); /* Slightly enlarge icon on hover */
+    box-shadow: 0 2px 4px #8652a1; /* Add a subtle shadow effect on hover */
+}   
+
+.copyright
+{
+   p{
+    color: #215a8f; /* Color text for contrast */
+    text-align: left; /* Left align text for a balanced look */
+    font-family: Tommorow, sans-serif;
+    font-size: 0.75rem; /* Set a slightly smaller font size for footer text */
+    margin: 0; /* Remove default margin */
+    padding: 5px 10px; /* Add padding for better readability */
+   };
 }
