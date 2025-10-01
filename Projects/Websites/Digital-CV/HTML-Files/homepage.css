@@ -71,9 +71,8 @@ header
   position: fixed; /* fix to top of screen */
   width: 100%;
   top: 0;
-  left: 0;
-  right: 0;
-  bottom: 5;  
+    left: 0;
+    right: 0;
   z-index: 1000; /* ensure it stays above other content */
   box-shadow: 0 2px 5px #00000033; /* subtle shadow for depth */
 }
@@ -466,7 +465,24 @@ footer {
 }   
 
 /* media query for responsiveness */
+@media (max-width: 800px) {
+    html {
+        background-color: rgb(69, 209, 34); /* Change background color for better visibility on smaller screens */
+    }
+}
+   
+/* Further media query for very small screens */
+
 @media (max-width: 600px) {
     html {
-        background-color: rgb(255, 0, 0); /* Change background color for better visibility on smaller screens */
-    };}
+        background-color: rgb(251, 9, 9); /* Change background color for better visibility on smaller screens */
+    }   
+}
+
+@media (max-width: 400px) {
+    html {
+        background-color: rgb(235, 212, 36); /* Change background color for better visibility on very small screens */
+    }
+}   
+
+/* End of CSS file */
