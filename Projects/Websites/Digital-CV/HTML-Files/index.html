@@ -7,31 +7,37 @@
     </head>
     <body>
     
-    <nav class="navigation-bar">
-        <ul> 
-            <li><a href="index.html">Home</a></li>   
-            <li><a href="About.html">About</a></li>
-            <li><a href="Education.html">Education</a></li>
-            <li><a href="Skills.html">Skills</a></li>
-            <li><a href="Projects.html">Projects</a></li>
-            <li><a href="Contact.html">Contact</a></li>
-        </ul>
-    </nav>  
-        
-    <header class="hero"> 
+    <header>  
+        <h1>Welcome to My Digital CV</h1>
+            <h2>Chakeer Drake-Frazier</h2>
+            <h3>Aspiring Software Engineer</h3>
+        <nav class="navigation-bar">
+        <!-- Navigation Links -->
+            <ul class ="nav-links">
+                <li><a style="background-color: #df4d2c;" href="index.html">Home</a></li>   
+                <li><a href="About.html">About</a></li>
+                <li><a href="Education.html">Education</a></li>
+                <li><a href="Skills.html">Skills</a></li>
+                <li><a href="Projects.html">Projects</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
         <section>
-            <h1>About</h1>
-                <h2>Welcome to my Digital-CV</h2>
-                    <h3>&ldquo;Aspiring Software Engineer&rdquo;</h3>
-                        <p>Hi! &#x1F44B; My name is Chakeer, I'm an aspiring Software Engineer with a passion for tech, design, problem-solving and continuous learning. This website showcases my education, skills, projects, and contact information.</p> 
-                    <h4>Feel free to explore and learn more about me</h4>
+            <div class="container">
+            <div class="text">
+                <h2>Your Gateway to My Professional Journey</h2>
+                    <p>Hi! &#x1F44B; My name is Chakeer, I'm an aspiring Software Engineer with a passion for tech, design, problem-solving and continuous learning. This website showcases my education, skills, projects, and contact information.</p>
+                    <p><a href="About.html">Click here to learn more about me</a></p> 
+            </div>
+                <img src="Profile.jpg" alt="Profile photo">
+            </div>
         </section>
 
         <section>
-            <h1>Education</h1>
+            <h1 class="section-title"><a href="Education.html">Education</a></h1>
                 <h2>Springboard Software Development Career program</h2>
                     <h3>2025-2026</h3>
                         <p>I successfully completed an intensive Software Engineering program, mastering HTML, CSS, JavaScript, while developing and deploying multiple projects, earning a Certificate of Completion. During my time at Springboard, I gained valuable skills and knowledge that have prepared me for a successful career in software engineering.</p>
@@ -45,13 +51,14 @@
                             <li>Developed problem-solving and critical-thinking skills</li>
                             <li>Prepared for a successful career in software engineering</li>
                             <li>Graduated with a Certificate of Completion</li>
+                            <li><a href="https://www.springboard.com" target="_blank" rel="noopener">Click Here to Learn More About Springboard</a></li>
                         </ul>
                 </details>
         </section>
  
         <section>
-            <h1>Skills</h1>
-                <h2>Critical skills i've develped throughout my career.</h2>
+            <h1 class="section-title"><a href="Skills.html">Skills</a></h1>
+                <h2>Critical skills I've developed throughout my career.</h2>
                     <h3>Key Technical & Professional Skills</h3>
                         <p>This list of skills is always growing as I strive to improve as a Software Developer.</p>
                     <div>
@@ -144,10 +151,9 @@
         </section>
  
         <section>
-            <h1>Projects</h1>
-                <h2>Recent projects i've develped.</h2> 
-                    <h3>Highlights</h3>
-                        <p>These projects highlight my growth and experience as a Web Developer.</p>
+            <h1 class="section-title"><a href="Projects.html">Projects</a></h1>
+                <h2>Recent projects I've developed.</h2> 
+                    <h3>These projects highlight my growth and experience as a Web Developer.</h3>
                             <div class="project-gallery">
                                     <a href="first.html" target="_blank">
                                         <img src="HTML-Practice-Graphic.png" alt="HTML Practice Project" width="300" height="200"></a>  
@@ -157,16 +163,15 @@
         </section>
               
         <section>
-            <h1>Contact</h1>
+            <h1 class="section-title"><a href="Contact.html">Contact</a></h1>
                 <h2>Looking to get in touch?</h2>
                     <h3>Just fill out the contact form below</h3>
-                        <p>Please follow the simple steps in the form, I look forward to hearing from you. </p>
                         <form action="mailto:chakeer.drakefrazier@gmail.com" method="post" enctype="text/plain">
                             <div class="radio-buttons">
                                 <details>
                                     <summary>Contact Form</summary>
                                     <section>
-                                        <h4>Step 1: Plese select a reason for this correspondence</h4>
+                                        <h4>Plese select a reason for this correspondence</h4>
                                             <label><input type="radio" name="option" value="hire"> Job Offer</label><br>
                                             <label><input type="radio" name="option" value="References"> Request References</label><br>
                                             <label><input type="radio" name="option" value="collaboration"> Collaboration</label><br>
@@ -174,7 +179,6 @@
                                             <label><input type="radio" name="option" value="other"> Other</label><br>
                                     </section>
                                     <section>
-                                        <h4>Step 2: Please fill out the form below *required</h4>
                                             <label for="name"></label><br>
                                                 <input required placeholder="Name*" id="name" type="text" name="name" size="40"><br>
                                             <label for="email"></label><br>
@@ -189,11 +193,6 @@
                                                 <textarea placeholder="Type your message here" id="message" name="message" cols="70" rows="10"></textarea><br>
                                                     <button type="submit">Send</button>
                                     </section>
-                                    <section>
-                                        <h4>Step 3: Tap &ldquo;send&rdquo; and connect with me on &ldquo;LinkedIn&rdquo;</h4>
-                                            <a href="https://www.linkedin.com/in/chakeer-drake-frazier/" target="_blank">  
-                                                <img src="LinkedIn.png" alt="LinkedIn Icon" width="100" height="100"></a>
-                                    </section>
                                 </details>
                             </div>
                         </form>
@@ -202,25 +201,18 @@
     </main>
 
     <footer> 
-        <h4>Connect with me on social media</h4>
         <section class="social-media-links">
-            <h5>Find me on:</h5>
-                <a href="https://github.com/chakeerdrakefrazier-dot" target="_blank">  
+             <a href="https://www.linkedin.com/in/chakeer-drake-frazier/" target="_blank">  
+                    <img src="LinkedIn.png" alt="LinkedIn Icon" width="100" height="100"></a>
+
+            <a href="https://github.com/chakeerdrakefrazier-dot" target="_blank">  
                     <img src="GitHub.png" alt="GitHub Icon" width="100" height="100"></a>  
                                 
-                <a href="mailto:chakeer.drakefrazier@gmail.com"> 
+            <a href="mailto:chakeer.drakefrazier@gmail.com"> 
                     <img src="Email.png" alt="Email Icon" width="100" height="100"></a>   
-                            
-                <a href="https://www.linkedin.com/in/chakeer-drake-frazier/" target="_blank">  
-                    <img src="LinkedIn.png" alt="LinkedIn Icon" width="100" height="100"></a>
-                                
-                <a href="tel:+1720-917-8108">
-                    <img src="Phone.png" alt="Phone Icon" width="100" height="100"></a>
-        </section>
-    </footer>
-
-    <section class="copyright">
+    
         <h6>&copy;2025 Chakeer Drake-Frazier</h6>
-    </section>   
+        </section>   
+    </footer>
 </body>
 </html>
