@@ -465,24 +465,104 @@ footer {
 }   
 
 /* media query for responsiveness */
-@media (max-width: 800px) {
-    html {
-        background-color: rgb(69, 209, 34); /* Change background color for better visibility on smaller screens */
-    }
-}
-   
-/* Further media query for very small screens */
 
-@media (max-width: 600px) {
-    html {
-        background-color: rgb(251, 9, 9); /* Change background color for better visibility on smaller screens */
+@media (max-width: 1000px) {
+    .container {
+        flex-direction: column; /* Stack text and image vertically */
+        text-align: center; /* Center align text for better readability */
+    }
+    
+    .container img {
+        max-width: 100%; /* Make image take full width of its container */
+        height: auto; /* Maintain aspect ratio */
+        margin-bottom: 20px; /* Add space below image for better readability */
+    }
+    
+    .container .text h2 {
+        font-size: 2rem; /* Adjust heading size for smaller screens */
+    }
+    
+    .container .text p {
+        font-size: 1rem; /* Adjust paragraph size for smaller screens */
     }   
 }
 
+@media (max-width: 800px) {
+    .container {
+        flex-direction: column; /* Stack text and image vertically */
+        text-align: center; /* Center align text for better readability */
+    }       
+
+    .container img {
+        max-width: 100%; /* Make image take full width of its container */
+        height: auto; /* Maintain aspect ratio */
+        margin-bottom: 20px; /* Add space below image for better readability */
+    }       
+    .container .text h2 {
+        font-size: 2rem; /* Adjust heading size for smaller screens */
+    }
+    .container .text p {
+        font-size: 1rem; /* Adjust paragraph size for smaller screens */
+        line-height: 1.5; /* Improve readability */
+        margin-bottom: 10px; /* Add space below paragraph for better readability */
+    }   
+}
+  
+/* Further media query for very small screens */
+
+@media (max-width: 600px) {
+    .container {
+        flex-direction: column; /* Stack text and image vertically */
+        text-align: center; /* Center align text for better readability */
+    }                                                       
+    .container img {
+        max-width: 100%; /* Make image take full width of its container */
+        height: auto; /* Maintain aspect ratio */
+        margin-bottom: 20px; /* Add space below image for better readability */
+    }
+    .container .text h2 {
+        font-size: 1.5rem; /* Adjust heading size for smaller screens */
+    }
+    .container .text p {
+        font-size: 1rem; /* Adjust paragraph size for smaller screens */
+        line-height: 1.5; /* Improve readability */
+        margin-bottom: 10px; /* Add space below paragraph for better readability */
+    }   
+}   
+
+@media (max-width: 500px) {
+    .navigation-bar {
+        flex-direction: column; /* Stack nav items vertically */
+        align-items: flex-start; /* Align items to the start for better readability */
+        padding: 1rem; /* Increase padding for better touch targets */
+    }   
+    .nav-links {
+        flex-direction: column; /* Stack nav links vertically */
+        gap: 10px; /* Reduce gap between links for better spacing */
+        width: 100%; /* Make nav links take full width of their container */
+    }
+    .nav-links a {
+        font-size: 1.25rem; /* Increase font size for better readability */
+    }
+}    
+
 @media (max-width: 400px) {
-    html {
-        background-color: rgb(235, 212, 36); /* Change background color for better visibility on very small screens */
+  
+    .container .text h2 {
+        font-size: 1.25rem; /* Adjust heading size for smaller screens */
+    }
+    .container .text p {
+        font-size: 0.9rem; /* Adjust paragraph size for smaller screens */
+        line-height: 1.4; /* Improve readability */
+        margin-bottom: 10px; /* Add space below paragraph for better readability */
+    }
+    .navigation-bar {
+        padding: 0.5rem; /* Reduce padding for better fit */
+    }
+    .nav-links a {
+        font-size: 1rem; /* Adjust font size for better fit */
     }
 }   
 
-/* End of CSS file */
+
+ /* End of CSS file */
