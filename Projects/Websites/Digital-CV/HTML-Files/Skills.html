@@ -5,26 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Chakeer's Digital CV - Home Page</title>
         <link rel="stylesheet" href="homepage.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     </head>
     <body>
-
-    <header>  
-        <h1>Skills</h1>
-        <nav class="navigation-bar">
-        <!-- Navigation Links -->
-            <ul class ="nav-links">
-                <li><a href="index.html">Home</a></li>   
-                <li><a href="About.html">About</a></li>
-                <li><a href="Education.html">Education</a></li>
-                <li><a style="background-color: #df4d2c;" href="Skills.html">Skills</a></li>
-                <li><a href="Projects.html">Projects</a></li>
-                <li><a href="Contact.html">Contact</a></li>
+    <div class="wrapper">
+    
+    <header>    
+        <nav>
+            <ul class ="nav-bar">
+                <li class="logo1"><a href="index.html"><img src="Logo1.png" alt="Logo"></a></li>
+                <input type="checkbox" id="check">   
+                <span class="menu">
+                    <li><a href="index.html">Home</a></li>   
+                    <li><a href="About.html">About</a></li>
+                    <li><a href="Education.html">Education</a></li>
+                    <li><a style="color: #000000;"href="Skills.html">Skills</a></li>
+                    <li><a href="Projects.html">Projects</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                    <label for="check" class="close-menu"><i class="fas fa-times"></i></label>
+                </span>
+                <label for="check" class="open-menu"><i class="fas fa-bars"></i></label>
             </ul>
         </nav>
     </header>
 
     <main>
         <section>
+                <h1>Skills</h1>
                 <h2>Critical skills i've develped throughout my career.</h2>
                     <h3>Key Technical & Professional Skills</h3>
                         <p>This list of skills is always growing as I strive to improve as a Software Developer.</p>
@@ -118,7 +125,7 @@
         </section>
               
          <section>
-            <h1>Contact</h1>
+            <h1 class="section-title"><a href="Contact.html">Contact</a></h1>
                 <h2>Looking to get in touch?</h2>
                     <h3>Just fill out the contact form below</h3>
                         <form action="mailto:chakeer.drakefrazier@gmail.com" method="post" enctype="text/plain">
@@ -169,5 +176,7 @@
         <h6>&copy;2025 Chakeer Drake-Frazier</h6>
         </section>   
     </footer>
-</body>
-</html>
+
+    </div>   
+    </body>
+    </html>

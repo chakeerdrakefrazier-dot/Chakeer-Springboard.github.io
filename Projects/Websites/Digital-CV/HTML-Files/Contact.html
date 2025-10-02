@@ -5,31 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Chakeer's Digital CV - Home Page</title>
         <link rel="stylesheet" href="homepage.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     </head>
     <body>
-
-    <header>  
-        <h1>Looking to get in touch?</h1>
-        <nav class="navigation-bar">
-        <!-- Navigation Links -->
-            <ul class ="nav-links">
-                <li><a href="index.html">Home</a></li>   
-                <li><a href="About.html">About</a></li>
-                <li><a href="Education.html">Education</a></li>
-                <li><a href="Skills.html">Skills</a></li>
-                <li><a href="Projects.html">Projects</a></li>
-                <li><a style="background-color: #df4d2c;" href="Contact.html">Contact</a></li>
+    <div class="wrapper">
+    
+    <header>    
+        <nav>
+            <ul class ="nav-bar">
+                <li class="logo1"><a href="index.html"><img src="Logo1.png" alt="Logo"></a></li>
+                <input type="checkbox" id="check">   
+                <span class="menu">
+                    <li><a href="index.html">Home</a></li>   
+                    <li><a href="About.html">About</a></li>
+                    <li><a href="Education.html">Education</a></li>
+                    <li><a href="Skills.html">Skills</a></li>
+                    <li><a href="Projects.html">Projects</a></li>
+                    <li><a style="color: #000000;"href="Contact.html">Contact</a></li>
+                    <label for="check" class="close-menu"><i class="fas fa-times"></i></label>
+                </span>
+                <label for="check" class="open-menu"><i class="fas fa-bars"></i></label>
             </ul>
         </nav>
     </header>
-
+    
     <main>
        <section>
-                <h2>Just fill out the contact form below</h2>
+            <h1>Contact</a></h1>
+                <h2>Looking to get in touch?</h2>
+                    <h3>Just fill out the contact form below</h3>
                         <form action="mailto:chakeer.drakefrazier@gmail.com" method="post" enctype="text/plain">
                             <div class="radio-buttons">
+                                <details>
+                                    <summary>Contact Form</summary>
                                     <section>
-                                        <h3>Please select a reason for this correspondence</h3>
+                                        <h4>Plese select a reason for this correspondence</h4>
                                             <label><input type="radio" name="option" value="hire"> Job Offer</label><br>
                                             <label><input type="radio" name="option" value="References"> Request References</label><br>
                                             <label><input type="radio" name="option" value="collaboration"> Collaboration</label><br>
@@ -51,9 +61,7 @@
                                                 <textarea placeholder="Type your message here" id="message" name="message" cols="70" rows="10"></textarea><br>
                                                     <button type="submit">Send</button>
                                     </section>
-                                    <section>
-                                        <p>You can also connect with me on <a href="https://www.linkedin.com/in/chakeer-drake-frazier/" target="_blank">LinkedIn</a> and <a href="https://github.com/chakeerdrakefrazier-dot" target="_blank">GitHub</a></p>
-                                    </section>
+                                </details>
                             </div>
                         </form>
         </section>
@@ -62,7 +70,7 @@
 
     <footer> 
         <section class="social-media-links">
-             <a href="https://www.linkedin.com/in/chakeer-drake-frazier/" target="_blank">  
+            <a href="https://www.linkedin.com/in/chakeer-drake-frazier/" target="_blank">  
                     <img src="LinkedIn.png" alt="LinkedIn Icon" width="100" height="100"></a>
 
             <a href="https://github.com/chakeerdrakefrazier-dot" target="_blank">  
@@ -70,9 +78,11 @@
                                 
             <a href="mailto:chakeer.drakefrazier@gmail.com"> 
                     <img src="Email.png" alt="Email Icon" width="100" height="100"></a>   
-                                
+          
         <h6>&copy;2025 Chakeer Drake-Frazier</h6>
         </section>   
     </footer>
-</body>
-</html>
+
+    </div>    
+    </body>
+    </html>
