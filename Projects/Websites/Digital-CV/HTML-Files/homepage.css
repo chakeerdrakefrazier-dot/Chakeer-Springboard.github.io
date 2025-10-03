@@ -9,12 +9,17 @@
 html, body {
   height: 100%;
   margin: 0;
+  background-color: #ffffff; 
+  font-family: "Poppins", sans-serif; /* Set a clean, modern font for the entire document */
+    font-size: 16px; /* Base font size */
+    line-height: 2; /* Increase line height for better readability */
 }
 
 .wrapper {
   display: flex;
   flex-direction: column;
   min-height: 100vh; /* Full viewport height */
+  
 }
 
 main {
@@ -22,19 +27,7 @@ main {
 }
 
 footer {
-  background: #333;
-  color: white;
   padding: 1rem;
-}
-
-body
-{
-    font-family: "Poppins", sans-serif; /* Set a clean, modern font for the entire document */
-    font-size: 16px; /* Base font size */
-    line-height: 2; /* Increase line height for better readability */
-    --color1: #ffffff; 
-    --color2: #000000;
-    --background-color: #ffffff; 
 }
 
 /* HEADER */
