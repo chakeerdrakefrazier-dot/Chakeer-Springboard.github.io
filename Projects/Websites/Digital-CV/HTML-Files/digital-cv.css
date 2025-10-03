@@ -10,9 +10,9 @@ html, body {
   height: 100%;
   margin: 0;
   background-color: #ffffff; 
-  font-family: "Poppins", sans-serif; /* Set a clean, modern font for the entire document */
-    font-size: 16px; /* Base font size */
-    line-height: 2; /* Increase line height for better readability */
+  font-family: "Poppins", sans-serif; /* Set a clean, modern font */
+  font-size: 16px; /* Base font size */
+  line-height: 2; /* Increase line height for better readability */
 }
 
 .wrapper {
