@@ -1,38 +1,58 @@
 <!DOCTYPE html>
 <html lang = "en">
-    <head>
+   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Chakeer's Digital CV - Home Page</title>
-        <link rel="stylesheet" href="digital-cv.css">
+        <link type="text/css" rel="stylesheet" href="digital-cv.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     </head>
     <body>
-    <div class="wrapper">
-    
-     <header>    
-        <nav>
-            <ul class ="nav-bar">
-                <div class="logo1"><a href="Home.html">Software Developer</a></div>
-                <input type="checkbox" id="check">  
-                    <span class="menu">
-                        <li><button onclick="location.href='Home.html'">Home</button></li>
-                        <li><button onclick="location.href='About.html'">About</button></li>
-                        <li><button onclick="location.href='Education.html'">Education</button></li>
-                        <li><button onclick="location.href='Skills.html'">Skills</button></li>
-                        <li><button style="background-color: #215a8f;" onclick="location.href='Projects.html'">Projects</button></li>
-                        <li><button onclick="location.href='Contact.html'">Contact</button></li>
-                            <label for="check" class="close-menu"><i class="fas fa-times"></i></label>
-                    </span>
-                            <label for="check" class="open-menu"><i class="fas fa-bars"></i></label>
-               <div>
-                    <a href="mailto:chakeer.drakefrazier@gmail.com" class="fas fa-envelope"></a> 
-                    <a href="https://linkedin.com/in/chakeer-drake-frazier/" class="fab fa-linkedin"></a>
-                    <a href="https://github.com/chakeer-drake-frazier" class="fab fa-github"></a>
-                </div>  
-            </ul>
-        </nav>
+<div class="wrapper">
+
+    <header>
+    <!-- Top utility bar (keeps content outside UL) -->
+    <div class="top-utility">
+        <div class="logo1"><a href="Home.html">Software Developer</a></div>
+        <div class="Offer"><a href="Contact.html" style="color: crimson;">Get started with 20% Off — Request a quote</a></div>
+        <div class="social-icons">
+            <a href="mailto:chakeer.drakefrazier@gmail.com" class="fas fa-envelope" aria-label="Email"></a>
+            <a href="https://linkedin.com/in/chakeer-drake-frazier/" class="fab fa-linkedin" aria-label="LinkedIn" target="_blank" rel="noopener"></a>
+            <a href="https://github.com/chakeer-drake-frazier" class="fab fa-github" aria-label="GitHub" target="_blank" rel="noopener"></a>
+        </div>
+    </div>
+
+    <!-- Bottom nav: UL contains only LI -->
+    <nav class="bottom-nav">
+        <ul class="bottom-nav-bar">
+            <li><a class="button" href="Home.html">Home</a></li>
+            <li><a class="button" href="About.html">About</a></li>
+            <li><a class="button" href="Education.html">Education</a></li>
+            <li><a class="button" href="Skills.html">Skills</a></li>
+            <li><a class="button" href="Projects.html">Projects</a></li>
+            <li><a class="button" href="Contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Responsive hamburger (kept outside UL) -->
+    <input type="checkbox" id="check" class="nav-toggle" aria-hidden="true">
+    <label for="check" class="open-menu"><i class="fas fa-bars"></i></label>
+    <label for="check" class="close-menu"><i class="fas fa-times"></i></label>
+
+    <!-- Off-canvas menu (optional) -->
+    <nav class="menu" aria-hidden="true">
+        <ul>
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="About.html">About</a></li>
+        <li><a href="Education.html">Education</a></li>
+        <li><a href="Skills.html">Skills</a></li>
+        <li><a href="Projects.html">Projects</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+        </ul>
+    </nav>
     </header>
+      
+    
 
      <main>
          <section>
@@ -48,7 +68,7 @@
                             </div>
         </section>
               
-         <section>
+        <section>
             <h1 class="section-title"><a href="Contact.html">Contact</a></h1>
                 <h2 class="h2-section-title">Looking to get in touch?</h2>
                     <h3 class="h3-section-title">Just fill out the contact form below</h3>
@@ -57,11 +77,11 @@
                                 <details>
                                     <summary>Contact Form</summary>
                                     <section>
-                                        <h4>Plese select a reason for this correspondence</h4>
-                                            <label><input type="radio" name="option" value="hire"> Job Offer</label><br>
-                                            <label><input type="radio" name="option" value="References"> Request References</label><br>
+                                        <h4>Please select a reason for this correspondence</h4>
+                                            <label><input type="radio" name="option" value="hire"> Employment</label><br>
+                                            <label><input type="radio" name="option" value="References"> Quote</label><br>
                                             <label><input type="radio" name="option" value="collaboration"> Collaboration</label><br>
-                                            <label><input type="radio" name="option" value="project"> Project Inquiry</label><br>
+                                           
                                             <label><input type="radio" name="option" value="other"> Other</label><br>
                                     </section>
                                     <section>
@@ -83,24 +103,25 @@
                             </div>
                         </form>
         </section>
-
     </main>
 
+    <!-- FOOTER -->
     <footer> 
         <section class="social-media-links">
             <a href="https://www.linkedin.com/in/chakeer-drake-frazier/" target="_blank">  
-                    <img src="LinkedIn.png" alt="LinkedIn Icon" width="100" height="100"></a>
+                    <img src="LinkedIn.png" alt="LinkedIn Icon"></a>
 
             <a href="https://github.com/chakeerdrakefrazier-dot" target="_blank">  
-                    <img src="GitHub.png" alt="GitHub Icon" width="100" height="100"></a>  
-                                
+                    <img src="GitHub.png" alt="GitHub Icon"></a>  
+
             <a href="mailto:chakeer.drakefrazier@gmail.com"> 
-                    <img src="Email.png" alt="Email Icon" width="100" height="100"></a>   
-          
+                    <img src="Email.png" alt="Email Icon"></a>   
+
         <h6>&copy;2025 Chakeer Drake-Frazier</h6>
         </section>   
     </footer>
 
-    </div>    
+    </div>   
     </body>
     </html>
+

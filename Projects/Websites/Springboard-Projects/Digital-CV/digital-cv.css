@@ -61,6 +61,88 @@ main {
     text-shadow: none;
 }
 
+/* Center top utility bar content */
+.top-utility {
+    display: flex;
+    justify-content: center;   /* center children horizontally */
+    align-items: center;       /* vertical alignment */
+    gap: 1rem;                 /* spacing between items */
+    padding: 0 1rem;
+}
+
+/* Make each direct child participate in centered flex layout */
+.top-utility > * {
+    margin: 0;                 /* prevent any child from pushing others */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Prevent social-icons from auto-pushing (if any rule uses margin-left:auto) */
+.top-utility .social-icons,
+.bottom-nav-bar .social-icons {
+    margin: 0 !important;
+}
+
+/* Ensure bottom nav is a centered flex row and any UL inside is centered too */
+.bottom-nav-bar {
+    display: flex;
+    justify-content: center;   /* center children horizontally */
+    align-items: center;
+    padding: 0;
+}
+
+/* If you use a UL inside bottom-nav-bar, make it a centered flex row */
+.bottom-nav-bar ul {
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Ensure list items are inline-flex and centered */
+.bottom-nav-bar li,
+.top-utility li {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Ensure anchors/buttons inside nav are centered blocks */
+.bottom-nav-bar a,
+.top-utility a,
+.bottom-nav-bar button,
+.top-utility button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ...existing code... */
+
+.top-utility {
+    position: absolute;            /* scrolls with page (not fixed) */
+    top: 0;              /* flush to the top of the viewport */
+    width: 100%;
+    padding: 0;          /* remove side padding so centering is exact */
+    background-color: #ffffff;
+    border-bottom: 5px solid #215a8f;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* center the nav items horizontally */
+    gap: 0.5rem;
+    z-index: 1000;       /* sits above page content when stuck */
+    list-style: none;
+    color: #215a8f;
+    text-shadow: none;
+}
+
 .top-utility li {
     list-style: none;
     display: inline-block;       /* ensure items are visible inline */
@@ -138,7 +220,6 @@ main {
 /* Menu styling */
 .menu{
     display: flex; /* Use flexbox for layout */
-    background-color: #000000e1; /* Background color for the menu */
     flex-direction: column; /* Stack menu items vertically */
     align-items: center; /* Center align items */
     justify-content: center; /* Center items vertically */
@@ -150,6 +231,9 @@ main {
     z-index: 100; /* Ensure it appears above other content */
     transition: all 0.2s ease-in-out; /* Smooth transition for menu appearance */
     list-style: none; /* Remove default list styling */
+    background-color: #ffffffeb;
+    backdrop-filter: blur(5px); /* Blur effect for background */
+
 }
 
 .menu li {
@@ -292,7 +376,7 @@ section
 {
     padding: 20px; /* Add padding for better readability */
     margin-bottom: 20px; /* Add space below each section */
-    box-sizing: border-box; /* Ensure padding and border are included in the element's total    width and height */ 
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */ 
     max-width: 1200px; /* Limit the maximum width for better readability */
     margin-left: auto; /* Center the section */
     margin-right: auto; /* Center the section */
@@ -657,4 +741,157 @@ footer {
     #check:checked ~ .menu {
         right: 0;
     }
+}
+
+/* Keep toggles hidden by default */
+.open-menu,
+.close-menu {
+    display: none !important;
+}
+
+/* On small screens show only the correct toggle and attach it to the bottom nav */
+@media (max-width: 1000px) {
+    /* Show the hamburger when menu is closed, and position it centered vertically in the nav bar */
+    #check:not(:checked) ~ .open-menu,
+    /* Show the close icon when menu is open, same position */
+    #check:checked ~ .close-menu {
+        display: block !important;
+        position: fixed; /* positioned relative to viewport so it "sticks" to the fixed bottom nav */
+        top: calc(var(--nav-height) / 2); /* center vertically in the nav (nav height defined in :root) */
+        transform: translateY(-50%); /* accurate vertical centering */
+        right: 16px; /* distance from right edge of viewport / nav */
+        font-size: 1.6rem;
+        z-index: 3200; /* above the nav (bottom-nav-bar z-index is ~900) */
+        color: #215a8f !important; /* requested color */
+        background: transparent;
+        border: none;
+    }
+
+    /* Ensure the opposite icon stays hidden */
+    #check:checked ~ .open-menu { display: none !important; }
+    #check:not(:checked) ~ .close-menu { display: none !important; }
+
+    /* hide the full bottom nav on small screens so hamburger/menu replace it */
+    .bottom-nav-bar { display: none !important; }
+
+    /* off-canvas menu toggle behavior */
+    .menu { right: -100%; }
+    #check:checked ~ .menu { right: 0; }
+}
+
+/* Force the hamburger open/close icons to use the brand color */
+#check:not(:checked) ~ .open-menu,
+#check:checked ~ .close-menu,
+.open-menu,
+.close-menu {
+    color: #215a8f !important;
+}
+
+/* ensure the inner <i> (Font Awesome) inherits */
+.open-menu i,
+.close-menu i {
+    color: inherit !important;
+}
+
+/* When the mobile hamburger/off-canvas menu is used, hide the top utility bar */
+@media (max-width: 1000px) {
+    .top-utility {
+        display: none !important;
+        visibility: hidden !important;
+        height: 0 !important;
+        overflow: hidden !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    /* if you want to also remove the space the top-utility occupied */
+    main {
+        padding-top: 0 !important;
+    }
+}
+
+/* mobile: center the open/close icons and keep them above the menu */
+@media (max-width: 1000px) {
+    /* center the visible toggle at the very top (respect safe-area on phones) */
+    #check:not(:checked) ~ .open-menu,
+    #check:checked ~ .close-menu {
+        display: block !important;
+        position: fixed;
+        top: calc(8px + env(safe-area-inset-top)); /* avoids notch on iOS */
+        left: 50%;
+        transform: translateX(-50%);
+        right: auto; /* cancel any right-based positioning */
+        font-size: 1.6rem;
+        z-index: 3200; /* above the menu and top-utility */
+        color: #215a8f !important;
+        background: rgba(255,255,255,0.95); /* subtle pill background to separate icon from page */
+        padding: 6px 10px;
+        border-radius: 999px;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+        line-height: 1;
+        border: none;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    /* make sure the inner <i> inherits color */
+    #check:not(:checked) ~ .open-menu i,
+    #check:checked ~ .close-menu i {
+        color: inherit !important;
+    }
+
+    /* keep the other icon hidden in the opposite state */
+    #check:checked ~ .open-menu { display: none !important; }
+    #check:not(:checked) ~ .close-menu { display: none !important; }
+
+    /* hide full bottom nav when using hamburger */
+    .bottom-nav-bar { display: none !important; }
+
+    /* ensure top-utility is hidden when menu available (already present, kept here to be explicit) */
+    .top-utility {
+        display: none !important;
+        visibility: hidden !important;
+        height: 0 !important;
+        overflow: hidden !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+}
+
+@media (max-width: 1000px) {
+    /* full-width fixed toggle bar at top */
+    #check:not(:checked) ~ .open-menu,
+    #check:checked ~ .close-menu {
+        display: flex !important;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: var(--nav-height);
+        min-height: 56px;
+        align-items: center;
+        justify-content: center;
+        z-index: 3200; /* above nav/menu */
+        background: rgba(255,255,255,0.98); /* separates icon from page */
+        color: #215a8f !important;
+        padding: 0;
+        box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+        transform: none !important; /* cancel prior translate rules */
+    }
+
+    /* icon styling */
+    #check:not(:checked) ~ .open-menu i,
+    #check:checked ~ .close-menu i {
+        color: inherit !important;
+        font-size: 1.6rem;
+        line-height: 1;
+    }
+
+    /* show only the correct toggle */
+    #check:checked ~ .open-menu { display: none !important; }
+    #check:not(:checked) ~ .close-menu { display: none !important; }
+
+    /* prevent page content from sitting under the fixed toggle bar */
+    body, .wrapper { padding-top: var(--nav-height); }
+    main { padding-top: 0; } /* main already adjusted elsewhere; wrapper/body padding handles spacing */
 }

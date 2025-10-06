@@ -5,61 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Chakeer's Digital CV - Home Page</title>
         <link type="text/css" rel="stylesheet" href="digital-cv.css">
-        <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     </head>
     <body>
 <div class="wrapper">
 
-<header>
-  <!-- Top utility bar (keeps content outside UL) -->
-  <div class="top-utility">
-    <div class="logo1"><a href="Home.html">Software Developer</a></div>
-    <div class="Offer"><a href="Contact.html" style="color: crimson;">Get started with 20% Off — Request a quote</a></div>
-    <div class="social-icons">
-        <a href="mailto:chakeer.drakefrazier@gmail.com" class="fas fa-envelope" aria-label="Email"></a>
-        <a href="https://linkedin.com/in/chakeer-drake-frazier/" class="fab fa-linkedin" aria-label="LinkedIn" target="_blank" rel="noopener"></a>
-        <a href="https://github.com/chakeer-drake-frazier" class="fab fa-github" aria-label="GitHub" target="_blank" rel="noopener"></a>
+    <header>
+    <!-- Top utility bar (keeps content outside UL) -->
+    <div class="top-utility">
+        <div class="logo1"><a href="Home.html">Software Developer</a></div>
+        <div class="Offer"><a href="Contact.html" style="color: crimson;">Get started with 20% Off — Request a quote</a></div>
+        <div class="social-icons">
+            <a href="mailto:chakeer.drakefrazier@gmail.com" class="fas fa-envelope" aria-label="Email"></a>
+            <a href="https://linkedin.com/in/chakeer-drake-frazier/" class="fab fa-linkedin" aria-label="LinkedIn" target="_blank" rel="noopener"></a>
+            <a href="https://github.com/chakeer-drake-frazier" class="fab fa-github" aria-label="GitHub" target="_blank" rel="noopener"></a>
+        </div>
     </div>
-  </div>
 
-  <!-- Bottom nav: UL contains only LI -->
-  <nav class="bottom-nav">
-    <ul class="bottom-nav-bar">
-        <li><a class="button" href="Home.html">Home</a></li>
-        <li><a class="button" href="About.html">About</a></li>
-        <li><a class="button" href="Education.html">Education</a></li>
-        <li><a class="button" href="Skills.html">Skills</a></li>
-        <li><a class="button" href="Projects.html">Projects</a></li>
-        <li><a class="button" href="Contact.html">Contact</a></li>
-    </ul>
-  </nav>
+    <!-- Bottom nav: UL contains only LI -->
+    <nav class="bottom-nav">
+        <ul class="bottom-nav-bar">
+            <li><a class="button" href="Home.html">Home</a></li>
+            <li><a class="button" href="About.html">About</a></li>
+            <li><a class="button" href="Education.html">Education</a></li>
+            <li><a class="button" href="Skills.html">Skills</a></li>
+            <li><a class="button" href="Projects.html">Projects</a></li>
+            <li><a class="button" href="Contact.html">Contact</a></li>
+        </ul>
+    </nav>
 
-  <!-- Responsive hamburger (kept outside UL) -->
-  <input type="checkbox" id="check" class="nav-toggle" aria-hidden="true">
-  <label for="check" class="open-menu"><i class="fas fa-bars"></i></label>
-  <label for="check" class="close-menu"><i class="fas fa-times"></i></label>
+    <!-- Responsive hamburger (kept outside UL) -->
+    <input type="checkbox" id="check" class="nav-toggle" aria-hidden="true">
+    <label for="check" class="open-menu"><i class="fas fa-bars"></i></label>
+    <label for="check" class="close-menu"><i class="fas fa-times"></i></label>
 
-  <!-- Off-canvas menu (optional) -->
-  <nav class="menu" aria-hidden="true">
-    <ul>
-      <li><a href="Home.html">Home</a></li>
-      <li><a href="About.html">About</a></li>
-      <li><a href="Education.html">Education</a></li>
-      <li><a href="Skills.html">Skills</a></li>
-      <li><a href="Projects.html">Projects</a></li>
-      <li><a href="Contact.html">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+    <!-- Off-canvas menu (optional) -->
+    <nav class="menu" aria-hidden="true">
+        <ul>
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="About.html">About</a></li>
+        <li><a href="Education.html">Education</a></li>
+        <li><a href="Skills.html">Skills</a></li>
+        <li><a href="Projects.html">Projects</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    </header>
       
-    
     <!-- ADD A HERO SECTION -->
 
     <!-- ABOUT ME -->
 
     <main>
+
+    <!-- HERO -->
+    <section class="hero" role="region" aria-label="Hero">
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <h1 class="hero-title">Welcome to My Digital CV</h1>
+                <p class="hero-subtitle">Software Engineer • Problem solver • Continuous learner</p>
+                <a class="button hero-cta" href="About.html">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT ME -->
         <h1 class="section-title"><a href="About.html">Welcome to My Digital CV</a></h1>
-        <section>
+        <section class="about-section">
             <div class="container">
             <div class="text">
                 <h2 class="h2-section-title">Your Gateway to My Professional Journey</h2>
@@ -72,8 +84,7 @@
         </section>
 
      <!-- EDUCATION -->
-
-        <section>
+        <section class="education-section">
             <h1 class="section-title"><a href="Education.html">Education</a></h1>
                 <h2 class="h2-section-title">Springboard Software Development Career program</h2>
                     <h3 class="h3-section-title">2025-2026</h3>
@@ -94,7 +105,7 @@
         </section>
  
      <!-- SKILLS -->
-        <section>
+        <section class="skills-section">
             <h1 class="section-title"><a href="Skills.html">Skills</a></h1>
                 <h2 class="h2-section-title">Critical skills I've developed throughout my career.</h2>
                     <h3 class="h3-section-title">Key Technical & Professional Skills</h3>
@@ -189,7 +200,7 @@
         </section>
  
      <!-- PROJECTS -->
-        <section>
+        <section class="projects-section">
             <h1 class="section-title"><a href="Projects.html">Projects</a></h1>
                 <h2 class="h2-section-title">Recent projects I've developed.</h2> 
                     <h3 class="h3-section-title">These projects highlight my growth and experience as a Web Developer.</h3>
@@ -202,7 +213,7 @@
         </section>
 
      <!-- CONTACT -->
-        <section>
+        <section class="contact-section">
             <h1 class="section-title"><a href="Contact.html">Contact</a></h1>
                 <h2 class="h2-section-title">Looking to get in touch?</h2>
                     <h3 class="h3-section-title">Just fill out the contact form below</h3>
