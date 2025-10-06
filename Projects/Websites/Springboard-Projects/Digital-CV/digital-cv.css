@@ -32,26 +32,52 @@ footer {
 
 /* HEADER */
 
-/* Navbar */
-.nav-bar {
-    width: 100%; /* Full width */
-    padding: 1rem 5%; /* Padding for better readability */
-    background-color: #ffffffb8; /* Background color for navbar */
-    border-bottom: #215a8f 1px solid; /* Bottom border for separation */
-    backdrop-filter: blur(15px); /* Blur effect for a modern look */
-    margin-bottom: 2rem; /* Space below navbar for better readability */
-    list-style: none; /* Remove default list styling */
-    position: fixed; /* Fix navbar to the top */
-    display: flex; /* Use flexbox for layout */
-    justify-content: space-between; /* Space between logo and nav links */
-    align-items: center; /* Vertically align items */
-    z-index: 1000; /* Ensure navbar is above other content */
-    top: 0%;              /* <-- add semicolon here */
-    height: 60px; /* Set a fixed height for the navbar */
+:root {
+    --nav-height: 60px;
+    --top-nav-height: 60px; /* adjust if either navbar has a different height */
 }
 
-.menu-btns {
-    display: block; /* <-- add semicolon */
+/* Remove the large top padding that created the extra space */
+main {
+    padding-top: 0;
+}
+
+/* Navbar */
+.top-utility {
+    position: absolute;            /* scrolls with page (not fixed) */
+    top: 0;              /* flush to the top of the viewport */
+    width: 100%;
+    padding: 0;          /* remove side padding so centering is exact */
+    background-color: #ffffff;
+    border-bottom: 5px solid #215a8f;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* center the nav items horizontally */
+    gap: 0.5rem;
+    z-index: 1000;       /* sits above page content when stuck */
+    list-style: none;
+    color: #215a8f;
+    text-shadow: none;
+}
+
+.top-utility li {
+    list-style: none;
+    display: inline-block;       /* ensure items are visible inline */
+}
+
+.top-utility a {
+    color: #215a8f;
+    text-decoration: none;
+    padding: 0.4rem 0.75rem;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+/* ensure buttons/anchors on nav contrast */
+.top-utility a.button {
+    background: #215a8f;
+    color: #fff;
 }
 
 .fas.fa-envelope, .fab.fa-linkedin, .fab.fa-github {
@@ -68,34 +94,89 @@ footer {
     color: #000000;
     cursor: pointer;    
     transform: scale(1.25);
+    transition: all 0.3s ease-in-out;
+}
+
+
+/* Bottom nav bar */
+.bottom-nav-bar {
+    position: fixed;    /* stick to viewport top when scrolled into view */
+    top: 0;              /* flush to the top of the viewport */
+    width: 100%;
+    padding: 0;          /* remove side padding so centering is exact */
+    background-color: #215a8f;
+    border-top: 3px solid #215a8f;
+    border-bottom: 3px solid #ffffff;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* center the nav items horizontally */
+    gap: 0.5rem;
+    z-index: 900;       /* sits above page content when stuck */
+    list-style: none;
+    color: #ffffff;
+    text-shadow: none;
+}
+
+/* Make bottom nav links visible on the blue background */
+.bottom-nav-bar a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 0.4rem 0.75rem;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+/* prevent any child from pushing nav items to the side */
+.bottom-nav-bar .social-icons,
+.bottom-nav-bar .logo1 {
+    margin: 0;
 }
 
 /* Menu styling */
 .menu{
     display: flex; /* Use flexbox for layout */
+    background-color: #000000e1; /* Background color for the menu */
+    flex-direction: column; /* Stack menu items vertically */
+    align-items: center; /* Center align items */
+    justify-content: center; /* Center items vertically */
+    width: 30%;
+    height: 100vh; /* Full height for the menu */
+    position: fixed; /* Fix position to viewport */
+    top: 0%; /* Start from the top */
+    right: -100%; /* Align to the right */
+    z-index: 100; /* Ensure it appears above other content */
+    transition: all 0.2s ease-in-out; /* Smooth transition for menu appearance */
+    list-style: none; /* Remove default list styling */
 }
+
 .menu li {
-    padding-left: 30px; /* Add padding to the left */
+    /* removed default list bullets and left padding so hamburger list is clean */
+    list-style: none;
+    margin: 0.5rem 0;     /* vertical spacing between menu items */
+    padding-left: 0;     /* remove the left padding that showed bullets */
 }
+
 .menu li button {
     text-decoration: none; /* Remove default underline from links */
     color: #ffffff; /* White text for contrast */
     text-shadow: #000000 0px 0px 15px; /* Add a subtle shadow for better readability */
     transition: 0.15s ease-in-out; /* Smooth transition for hover effects */
-    background-color: #0000007e;
+    background-color: #00000074;
     box-shadow: #215a8f 0px 0px 10px; /* Add a subtle shadow for better readability */
 }
 
 .menu li button:hover:after {
     width: 100%; /* Full width on hover */
-
 }
 
 .menu li button:hover {
     color: #ffffff; /* Change color on hover for interactivity */
     font-weight: 700; /* Make links bold on hover for emphasis */
-    background-color: #000000; 
-    text-shadow: #215a8f 0px 0px 10px; /* Add a subtle shadow for better readability */
+    background-color: #215a8f; 
+    text-shadow: #ffffff 0px 0px 10px; /* Add a subtle shadow for better readability */
     box-shadow: #215a8f 0px 0px 10px;   /* Add a subtle shadow for better readability */
     transform: scale(1.25);
     cursor: pointer;
@@ -119,7 +200,7 @@ footer {
 {
     top: 20px;  
     right: 20px; /* Position from the right */
-    color: #ffffff;
+    color: #215a8f;
 
 }
     
@@ -127,22 +208,24 @@ footer {
     display: none; /* Hide the checkbox */
 }
 
-/* MAIN */
-
-/*logo*/
-.logo1 {
-    font-size: 1rem; /* Adjust font size for logo */
-    font-weight: 700; /* changed from invalid 700rem */
-    color: #215a8f;
-    letter-spacing: 1px; /* Slightly increase letter spacing for better readability */
+/* Nav Offer*/
+.Offer {
     transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
-    display: flex; /* Use flexbox for layout */}
+}
 
 
-.logo1:hover {
-    transform: scale(1.25); /* Slightly enlarge image on hover */
+.Offer:hover {
+    transform: scale(1.05); /* Slightly enlarge image on hover */
     cursor: pointer; /* Change cursor to pointer on hover */
-    color: #000000;
+}
+
+.Offer a
+{
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.5rem 0.75rem;
+    display: inline-block;
+    font-size: 1rem;
 }
 
 
@@ -502,7 +585,6 @@ form ::placeholder
     text-align: left; /* Align placeholder text to the left */
 }
 
-
 /* FOOTER */
 
 /* Styling for footer */
@@ -551,245 +633,28 @@ footer {
 
 /* media query for responsiveness */
 
-@media (max-width: 1200px) {
+/* On smaller screens you probably only want one nav visible */
 
-    .h1 , a {
-        font-size: 1.5rem;
-    }
-
-    /* Menu */
-    .menu {
-        flex-direction: column; /* Stack menu items vertically */
-        align-items: center; /* Center align items */
-        justify-content: center; /* Center items vertically */
-        width: 80%;
-        height: 100vh; /* Full height for the menu */
-        position: fixed; /* Fix position to viewport */
-        top: 0%; /* Start from the top */
-        right: -100%; /* Align to the right */
-        z-index: 100; /* Ensure it appears above other content */
-        background-color: #215a8f; /* Background color for the menu */
-        transition: all 0.2s ease-in-out; /* Smooth transition for menu appearance */
-    }
-
-    .menu li {margin-top: 40px; /* Add space above each menu item */}
-    .menu li a {padding: 10px; /* Add padding to menu links */}
-    .open-menu , .close-menu {display: block;}
-    #check:checked ~ .menu {right: 0;} /* Show menu when checkbox is checked */
-    .fas.fa-envelope , .fab.fa-linkedin , .fab.fa-github {display: none;} /* Hide email icon on small screens */
-
-    /* Container for container holding image and text */
-    .container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        padding: 20px;
-    }
-    .container img {
-        max-width: 100%;      /* control image size */
-        height: auto;         /* maintain aspect ratio */
-    }
-    .section-title a {
-        font-size: 3rem; 
-    }
-    .h2-section-title {
-        font-size: 2rem;    
-    }
-    .h3-section-title {
-        font-size: 1.5rem;    
-    }
+/* Desktop: hide hamburger & off-canvas menu, show normal navs */
+@media (min-width: 1001px) {
 }
 
-/* media query for smaller screens */
-
-@media (max-width: 800px) {
-
-
-    .h1 , a {
-        font-size: 1.25rem;
+@media (max-width: 1000px) {
+    .open-menu,
+    .close-menu {
+        display: block !important;
     }
 
-    /* Menu */
+    /* hide the full bottom nav on small screens so hamburger/menu replace it */
+    .bottom-nav-bar {
+        display: none !important;
+    }
+
+    /* keep off-canvas menu hidden until toggled */
     .menu {
-        flex-direction: column; /* Stack menu items vertically */
-        align-items: center; /* Center align items */
-        justify-content: center; /* Center items vertically */
-        width: 80%;
-        height: 100vh; /* Full height for the menu */
-        position: fixed; /* Fix position to viewport */
-        top: 0%; /* Start from the top */
-        right: -100%; /* Align to the right */
-        z-index: 100; /* Ensure it appears above other content */
-        background-color: #215a8f; /* Background color for the menu */
-        transition: all 0.2s ease-in-out; /* Smooth transition for menu appearance */
+        right: -100%;
     }
-
-    .menu li {margin-top: 40px; /* Add space above each menu item */}
-    .menu li a {padding: 10px; /* Add padding to menu links */}
-    .open-menu , .close-menu {display: block;}
-    #check:checked ~ .menu {right: 0;} /* Show menu when checkbox is checked */
-    .fas.fa-envelope , .fab.fa-linkedin , .fab.fa-github {display: none;} /* Hide email icon on small screens */
-
-    /* Container for container holding image and text */
-    .container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        padding: 20px;
-    }
-    .container img {
-        max-width: 100%;      /* control image size */
-        height: auto;         /* maintain aspect ratio */
-    }
-    .section-title a {
-        font-size: 3rem; 
-    }
-    .h2-section-title {
-        font-size: 2rem;    
-    }
-    .h3-section-title {
-        font-size: 1.5rem;    
+    #check:checked ~ .menu {
+        right: 0;
     }
 }
-
-    
-
-/* media query for very small screens */
-
-@media (max-width: 680px) {
-
-    .h1 , a {
-        font-size: 1rem;
-    }
-
-     /* Menu */
-    .menu {
-        flex-direction: column; /* Stack menu items vertically */
-        align-items: center; /* Center align items */
-        justify-content: center; /* Center items vertically */
-        width: 80%;
-        height: 100vh; /* Full height for the menu */
-        position: fixed; /* Fix position to viewport */
-        top: 0%; /* Start from the top */
-        right: -100%; /* Align to the right */
-        z-index: 100; /* Ensure it appears above other content */
-        background-color: #215a8f; /* Background color for the menu */
-        transition: all 0.2s ease-in-out; /* Smooth transition for menu appearance */
-    }
-
-    .menu li {margin-top: 40px; /* Add space above each menu item */}
-    .menu li a {padding: 10px; /* Add padding to menu links */}
-    .open-menu , .close-menu {display: block;}
-    #check:checked ~ .menu {right: 0;} /* Show menu when checkbox is checked */
-    .fas.fa-envelope , .fab.fa-linkedin , .fab.fa-github {display: none;} /* Hide email icon on small screens */
-
-
-    /* Container for container holding image and text */
-    .container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        padding: 20px;
-    }
-    .container img {
-        max-width: 75%;      /* control image size */
-        height: auto;         /* maintain aspect ratio */
-    }
-}
-    
-
-@media (max-width: 500px) {
-
-  
-    .h1 , a {
-        font-size: 0.875rem;
-    }   
-
-    /* Menu */
-    .menu {
-        flex-direction: column; /* Stack menu items vertically */
-        align-items: center; /* Center align items */
-        justify-content: center; /* Center items vertically */
-        width: 80%;
-        height: 100vh; /* Full height for the menu */
-        position: fixed; /* Fix position to viewport */
-        top: 0%; /* Start from the top */
-        right: -100%; /* Align to the right */
-        z-index: 100; /* Ensure it appears above other content */
-        background-color: #215a8f; /* Background color for the menu */
-        transition: all 0.2s ease-in-out; /* Smooth transition for menu appearance */
-    }
-    
-    .menu li {margin-top: 40px; /* Add space above each menu item */}
-    .menu li a {padding: 10px; /* Add padding to menu links */}
-    .open-menu , .close-menu {display: block;}
-    #check:checked ~ .menu {right: 0;} /* Show menu when checkbox is checked */
-    .fas.fa-envelope , .fab.fa-linkedin , .fab.fa-github {display: none;} /* Hide email icon on small screens */
-
-    /* Container for container holding image and text */
-    .container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        padding: 20px;
-    }
-
-    .container img {
-        max-width: 60%;      /* control image size */
-        height: auto;         /* maintain aspect ratio */
-    } 
-}
-
-  
-
-@media (max-width: 450px) {
-
-  
-    .h1 , a {
-        font-size: 0.75rem;
-    }
-
-/* Menu */
-    .menu {
-        flex-direction: column; /* Stack menu items vertically */
-        align-items: center; /* Center align items */
-        justify-content: center; /* Center items vertically */
-        width: 80%;
-        height: 100vh; /* Full height for the menu */
-        position: fixed; /* Fix position to viewport */
-        top: 0%; /* Start from the top */
-        right: -100%; /* Align to the right */
-        z-index: 100; /* Ensure it appears above other content */
-        background-color: #215a8f; /* Background color for the menu */
-        transition: all 0.2s ease-in-out; /* Smooth transition for menu appearance */
-    }
-    
-    .menu li {margin-top: 40px; /* Add space above each menu item */}
-    .menu li a {padding: 10px; /* Add padding to menu links */}
-    .open-menu , .close-menu {display: block;}
-    #check:checked ~ .menu {right: 0;} /* Show menu when checkbox is checked */
-    .fas.fa-envelope , .fab.fa-linkedin , .fab.fa-github {display: none;} /* Hide email icon on small screens */
-    
-    /* Container for container holding image and text */
-    .container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        padding: 20px;
-    }   
-
-    .container img {
-        max-width: 50%;      /* control image size */
-        height: auto;         /* maintain aspect ratio */
-    }   
-}
-
-   
-
-
-/* END of CSS file */
