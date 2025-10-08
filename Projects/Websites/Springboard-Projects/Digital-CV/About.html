@@ -11,28 +11,48 @@
 <div class="wrapper">
 
     <header>
-    <!-- Top utility bar (keeps content outside UL) -->
+    <!-- Top utility bar -->
     <div class="top-utility">
-        <div class="logo1"><a href="Home.html">Software Developer</a></div>
-        <div class="Offer"><a href="Contact.html" style="color: crimson;">Get started with 20% Off — Request a quote</a></div>
-        <div class="social-icons">
-            <a href="mailto:chakeer.drakefrazier@gmail.com" class="fas fa-envelope" aria-label="Email"></a>
-            <a href="https://linkedin.com/in/chakeer-drake-frazier/" class="fab fa-linkedin" aria-label="LinkedIn" target="_blank" rel="noopener"></a>
-            <a href="https://github.com/chakeer-drake-frazier" class="fab fa-github" aria-label="GitHub" target="_blank" rel="noopener"></a>
-        </div>
+        <details class="utility-menu-toggle" role="group" aria-label="Utility menu">
+            <summary aria-haspopup="true" aria-expanded="false">Menu</summary>
+            <ul class="top-utility-menu">
+                <li><a class="button" href="Home.html">Home</a></li>
+                <li><a class="button" href="About.html">About</a></li>
+                <li><a class="button" href="Education.html">Education</a></li>
+                <li><a class="button" href="Skills.html">Skills</a></li>
+                <li><a class="button" href="Projects.html">Projects</a></li>
+                <li><a class="button" href="Contact.html">Contact</a></li>
+            </ul>
+        </details>
     </div>
 
-    <!-- Bottom nav: UL contains only LI -->
-    <nav class="bottom-nav">
-        <ul class="bottom-nav-bar">
+    <!-- Bottom nav -->
+    <div class="bottom-nav" role="navigation" aria-label="Main navigation">
+      <div class="inner">
+        <div class="left">
+          <div class="logo1">Software Developer | Crafting Digital Experiences</div>
+        </div>
+
+        <div class="center">
+          <ul class="bottom-nav-bar">
             <li><a class="button" href="Home.html">Home</a></li>
             <li><a class="button" href="About.html">About</a></li>
             <li><a class="button" href="Education.html">Education</a></li>
             <li><a class="button" href="Skills.html">Skills</a></li>
             <li><a class="button" href="Projects.html">Projects</a></li>
             <li><a class="button" href="Contact.html">Contact</a></li>
-        </ul>
-    </nav>
+          </ul>
+        </div>
+
+        <div class="right">
+          <div class="nav-social-icons">
+            <a href="mailto:chakeer.drakefrazier@gmail.com" class="fas fa-envelope" aria-label="Email"></a>
+            <a href="https://linkedin.com/in/chakeer-drake-frazier/" class="fab fa-linkedin" aria-label="LinkedIn" target="_blank" rel="noopener"></a>
+            <a href="https://github.com/chakeer-drake-frazier" class="fab fa-github" aria-label="GitHub" target="_blank" rel="noopener"></a>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Responsive hamburger (kept outside UL) -->
     <input type="checkbox" id="check" class="nav-toggle" aria-hidden="true">
@@ -51,12 +71,13 @@
         </ul>
     </nav>
     </header>
+
     
     <main>
 
     <section>
          <h1 class="section-title">About Me</h1>
-            <img src="Family.jpg" alt="Drake-Frazier Family">
+            <img class="family-image" src="Family.jpg" alt="Drake-Frazier Family">
             <h2 class="h2-section-title" style="text-align: center;">Get to Know Me Better</h2>
             <p>I am a proud husband to my wife, Chanda, and in August 2025 we welcomed our fifth child into our family. Born and raised in Denver, Colorado, I began my career as a Class A truck driver, traveling extensively across the region. In September 2025, I made the transition from trucking to software engineering—a field that combines my lifelong love of technology with my passion for art and creativity. 
                 Pursuing a career in software development allows me to build solutions that are both innovative and practical while expressing my creative side. Outside of work, I enjoy spending time with my family, developing personal side projects, riding my motorcycle, and teaching third graders at our local church.</p> 
@@ -103,21 +124,37 @@
     </main>
 
     <!-- FOOTER -->
-    <footer> 
-        <section class="social-media-links">
-            <a href="https://www.linkedin.com/in/chakeer-drake-frazier/" target="_blank">  
-                    <img src="LinkedIn.png" alt="LinkedIn Icon"></a>
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-col footer-social">
+              <h4 class="footer-summary"><a href="Contact.html">Contact</a></h4>
+                <div class="social-media-links">
+                <ul>
+                    <li><a href="https://www.linkedin.com/in/chakeer-drake-frazier/" target="_blank" rel="noopener">LinkedIn</a></li>
+                    <li><a href="https://www.instagram.com/chakeerdrakefrazier/" target="_blank" rel="noopener">Instagram</a></li>
+                    <li><a href="https://github.com/chakeerdrakefrazier-dot" target="_blank" rel="noopener">GitHub</a></li>
+                    <li><a href="mailto:chakeer.drakefrazier@gmail.com">Email</a></li>
+                </ul>
+                </div>
+        </div>
 
-            <a href="https://github.com/chakeerdrakefrazier-dot" target="_blank">  
-                    <img src="GitHub.png" alt="GitHub Icon"></a>  
-
-            <a href="mailto:chakeer.drakefrazier@gmail.com"> 
-                    <img src="Email.png" alt="Email Icon"></a>   
-
-        <h6>&copy;2025 Chakeer Drake-Frazier</h6>
-        </section>   
+        <div class="footer-col-menu">
+            <h4 class="footer-summary"><a href="home.html">Home</a></h4>
+                <ul>
+                    <li><a href="About.html">About</a></li>
+                    <li><a href="Education.html">Education</a></li>
+                    <li><a href="Skills.html">Skills</a></li>
+                    <li><a href="Projects.html">Projects</a></li>
+                </ul>
+        </div>
     </footer>
 
+     <footer>
+        <div class="footer-col footer-info">
+            <h5>&copy;2025 Chakeer Drake-Frazier | All Rights Reserved</h5>
+         </div>
+    </footer>
+    
     </div>   
     </body>
     </html>
