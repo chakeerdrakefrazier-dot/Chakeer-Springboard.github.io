@@ -5,7 +5,7 @@ CSS STYLE SHEET FOR DIGITAL CV WEBSITE
     box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
     margin: 0; /* Remove default margin */
     padding: 0; /* Remove default padding */
-}
+} 
 
 /* Styling for the entire document */
 html, body {
@@ -45,7 +45,6 @@ header {
     margin-bottom: 20px; /* Space below header for better readability */
     width: 100%; /* Full width */
     padding: 0;
-    padding-top: 0; /* Remove top padding */
 }
 
 /* Styling for top utility bar */
@@ -87,11 +86,9 @@ details > summary {
     text-transform: uppercase; /* Uppercase for emphasis */
     padding-bottom: 0px;
     margin-bottom: 0; /* remove extra space below */
-    padding-top: 20px;
+    padding-top: 50px;
     backdrop-filter: blur(10px); /* Blur effect for background */
 } 
-
-
 
 .top-utility {
     position: relative; /* Fix position to viewport */
@@ -106,7 +103,7 @@ details > summary {
 .utility-menu-toggle .top-utility-menu {
     display: flex;
     flex-direction: row;        /* horizontal row */
-    justify-content: center;    /* center items */
+    justify-content: space-evenly;    /* center items */
     align-items: center;
     gap: 0.5rem;                /* spacing between buttons */
     margin: 0;
@@ -158,6 +155,33 @@ details > summary {
     font-weight: 700; /* Make links bold on hover for emphasis */
     transition: all 0.3s ease; /* Smooth transition for hover effects */
     cursor: pointer; /* Change cursor to pointer on hover */
+}
+ 
+.utility-menu-button {
+    font-size: 1.25rem; /* slightly larger font size */
+    font-weight: 600; /* make summary text bold */
+    padding: 0.5rem 1rem; /* padding for better hit area */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    text-align: center; /* Center align text for a balanced look */
+    display: flex; /* use flexbox for layout */
+    justify-content: center; /* center content */
+    text-transform: uppercase; /* Uppercase for emphasis */
+    border: none; /* remove default border */
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+    margin-bottom: 0; /* remove extra space below */
+    padding-bottom: 0px;
+    padding-top: 50px;
+    color: #215a8f; /* White text for contrast */
+    background-color: #ffffff;
+    backdrop-filter: blur(10px); /* Blur effect for background */
+}   
+
+.utility-menu-button:hover {
+    color: #000000; /* Change text color on hover for interactivity */
+    font-weight: 700; /* Make links bold on hover for emphasis */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transform: scale(1.1);
 }
 
 /* Styling for bottom navigation bar */
@@ -227,7 +251,7 @@ details > summary {
     margin: 0;
     padding: 0;
     list-style: none;
-    justify-content: center;
+    justify-content: space-evenly; /* spread out the menu items */
     align-items: center;
     width: auto;
 }
@@ -352,8 +376,6 @@ details > summary {
 }
 
 
-
-
 /* MAIN CONTENT -------------------------------------------------------------------------------------------- */
 
 main {
@@ -362,7 +384,7 @@ padding-top: 5%;
 
 /* Hero Section */
 .hero {
-    height: auto; /* Full viewport height */
+    height: 10vh; /* Full viewport height */
     width: 100%; /* Full width */
     min-height: 20vh;
     display: flex;
@@ -377,7 +399,7 @@ padding-top: 5%;
     margin-bottom: 10px;
     padding-top: 0%;
     padding-bottom: 0%;
-    border: #000000 5px solid; /* border for emphasis */
+    border: #000000 px solid; /* border for emphasis */
     box-shadow: 5px 5px 7px #000000; /* Add a subtle shadow for depth */
     border-radius: 8px; /* Rounded corners for a modern look */
 }
@@ -799,6 +821,104 @@ form summary:hover {
     cursor: pointer; /* Change cursor to pointer on hover */
 }
 
+/* SECTION BACKGROUNDS --------------------------------------------------------------------------------------------*/
+
+section.hero-section {
+    background-color: #ffffff;
+}
+
+section.about-section {
+    background-color: #e1e2e357;
+}
+
+section.education-section {
+    background-color: #ffffff;
+}
+
+section.skills-section {
+    background-color: #e1e2e357;
+}
+
+section.projects-section {
+    background-color: #ffffff;
+}
+
+section.linkedin-section {
+    background-color: #e1e2e357;
+}
+
+section.contact-section {
+    background-color: #ffffff;
+}
+
+section.footer-hero-section {
+    background-color: #e1e2e357;
+}
+
+/* LINKEDIN  --------------------------------------------------------------------------------------------*/
+
+/* ...existing code... */
+
+/* Overlay button on profile image */
+.profile-link {
+    position: relative;
+    display: inline-block;
+    line-height: 0; /* remove inline gap under image */
+    text-decoration: none;
+}
+.profile-image2 {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 100px; /* rounded corners for a modern look */
+}
+
+/* button that sits on top of the image */
+.profile-btn {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #ffffffeb;
+    color: #215a8f;
+    border: 4px solid #ffffff;
+    padding: 1rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 800;
+    box-shadow: 0 4px 12px #000000;
+    pointer-events: none; /* make the whole anchor clickable; button is decorative */
+}
+
+/* when whole anchor focused/hovered, show stronger state */
+.profile-link:focus .profile-btn,
+.profile-link:hover .profile-btn {
+    background: #215a8f;
+    box-shadow: 0 6px 18px #215a8f;
+    transition: all 0.s ease;
+    color: #ffffff;
+}
+
+/* accessible focus ring - make anchor keyboard-friendly */
+.profile-link:focus {
+    outline: 3px solid #8f42212e;
+    outline-offset: 4px;
+}
+
+/* LinkedIn badge base styles */
+.badge-base.LI-profile-badge {
+    border: 3px solid #215a8f; /* border for emphasis */
+    box-shadow: 5px 5px 7px #000000; /* Add a subtle shadow for depth */
+    border-radius: 8px; /* Rounded corners for a modern look */
+    overflow: hidden; /* Ensure content doesn't overflow the rounded corners */
+    width: 100%; /* Make badge take full width of its container */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 330px; /* Limit maximum width for better readability */
+    margin: 0 auto; /* Center the badge */
+    display: block; /* Ensure the badge is a block element for proper centering */
+    outline: #215a8f 5px solid; /* border for emphasis */
+}
+
+
 /* FOOTER --------------------------------------------------------------------------------------------*/
 
 /* Footer: two centered columns, UL items stacked vertically and centered with copyright centered full-width at bottom */
@@ -825,11 +945,12 @@ footer {
 .footer-col,
 .footer-col-menu {
     flex: 1 1 320px;            /* allow columns to shrink/grow */
-    display: flex;
-    flex-direction: column;
+    display: flex; /* use flexbox for layout */
+    flex-direction: column; /* stack items vertically */
+    justify-content: center;    /* center column content vertically */  
     align-items: center;        /* center column content horizontally */
     text-align: center;
-    gap: 1rem;
+    gap: 1.5rem;
     
 }
 
@@ -903,10 +1024,7 @@ footer {
 
 @media (max-width: 1000px) {
   /* sizes */
-  :root {
-    --toggle-height: 60px; /* height of the fixed toggle bar */
-    --nav-height: 60px;    /* height of the fixed bottom-nav */
-  }
+ 
 
   /* Full-width fixed toggle bar (open/close) at the very top */
   #check:not(:checked) ~ .open-menu,
@@ -921,34 +1039,46 @@ footer {
     justify-content: center;
     z-index: 4200; /* highest so icon remains clickable above everything */
     padding: 0;
+    
   }
   /* icon size/color */
   #check:not(:checked) ~ .open-menu i,
   #check:checked ~ .close-menu i {
-    font-size: 1.4rem;
     color: #215a8f /* blue for contrast */;
     text-shadow: #f5f5f5 0px 0px 10px;
     border: 3px #ffffff solid; /* border for emphasis */
     border-radius: 50px; /* rounded corners for a modern look */
-    padding: 5px;
+    padding: 20px;
     box-shadow: 3px 3px 5px #000000; 
     margin-top: 20px;
     margin-bottom: 20px;/* Add a subtle shadow for depth */
     background-color: #ffffff;
-    height: 40px
-    width: 40px;
+    
+    border-bottom: 3px solid #215a8f; /* border for emphasis */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+  }
+
+  #check:not(:checked) ~ .open-menu i,
+  #check:checked ~ .close-menu :hover {
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    color: #ffffff;
+    background-color: #215a8f; /* blue for contrast */
   }
 
   /* Fixed nav directly below the toggle bar */
   .bottom-nav {
-    position: fixed;
-    top: calc(var(--toggle-height));
+    position: relative;
+    margin-top: 0;
+    padding-top: 0;
+    border-top: #215a8f 5px solid; /* border for emphasis */
+    top: 0;
     left: 0;
     right: 0;
     height: var(--nav-height);
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly; /* spread out the menu items */
     z-index: 3600; /* below the toggle icons, above page content */
     background: #ffffff;
     box-shadow: 0 2px 6px #00000014;
@@ -962,23 +1092,25 @@ footer {
     height: 100vh;
     width: 30%;
     max-width: 380px;
-    z-index: 4100; /* below icons (4200) so close icon stays on top */
-    transition: right 0.25s ease;
+    z-index: 4100; /* below icons (4200) so close icon stays on top */    
   }
-  #check:checked ~ .menu { right: 0; }
+
+  #check:checked ~ .menu { 
+    right: 0; 
+  }
 
   /* push page content (hero/main) below the toggle + nav */
   body,
   .wrapper,
   main {
-    padding-top: 50px; /* space for toggle + nav */
+    padding-top: 60px; /* space for toggle + nav */
   }
 
   /* ensure the top utility (if present) doesn't reintroduce overlap */
-  .top-utility .bottom-nav-bar {
-    display: none !important;
-  }
+.top-utility .bottom-nav-bar {
+    display: flex !important;
 }
+
 
 
 @media (max-width: 1000px) {
@@ -1006,13 +1138,10 @@ footer {
         background: transparent;
         cursor: pointer; /* Change cursor to pointer on hover */
         z-index: 4000; /* above nav/menu */
-        color: #000000; /* Black text for contrast */
         display: block;
         position: fixed;
-        top: calc(1px + env(safe-area-inset-top)); /* avoids notch on iOS */
-        left: 50%;
-        transform: translateX(-0%);
-        text-shadow: #000000 0px 0px 10px;
+        left: 45%;
+        transform: translateX(0%);
     }
 
     .open-menu,
@@ -1047,7 +1176,7 @@ footer {
     gap: 10px; /* space between text and image */
     }   
     .container img {
-        max-width: 80%; /* smaller image on small screens */
+        max-width: 40vh; /* smaller image on small screens */
         height: auto; /* maintain aspect ratio */
     }
     .container .text {
@@ -1161,9 +1290,18 @@ footer {
         padding: 1.25rem;
     }
 
-    .footer-col,
-    .footer-col-menu {
-        flex-basis: 100%;
-        align-items: center;
+        .footer-col,
+        .footer-col-menu {
+            flex-basis: 100%;
+            align-items: center;
+        }
+    }
+}
+
+/* small screens: reduce button size */
+@media (max-width: 480px) {
+    .profile-btn {
+        padding: 0.35rem 0.6rem;
+        font-size: 0.9rem;
     }
 }
