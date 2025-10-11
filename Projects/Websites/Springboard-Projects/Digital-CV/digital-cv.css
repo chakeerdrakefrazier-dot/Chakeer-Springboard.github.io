@@ -47,48 +47,6 @@ header {
     padding: 0;
 }
 
-/* Styling for top utility bar */
-
-/* Remove native summary marker (cross‑browser) */
-details > summary {
-    list-style: none;        /* fallback */
-    padding-left: 0;         /* remove any left space for the marker */
-}
-
-/* Blink/Chrome/Safari */
-details > summary::-webkit-details-marker {
-    display: none;
-}
-
-/* Modern browsers that expose ::marker */
-details > summary::marker {
-    color: transparent;
-    font-size: 0;
-}
-
-/* Firefox fallback */
-details > summary::-moz-list-bullet {
-    color: transparent;
-    font-size: 0;
-}
-
-details > summary {
-    /* Style when details is open */
-    color: #215a8f; /* dark text color for better contrast */
-    font-weight: 600; /* make summary text bold */
-    font-size: 1.25rem; /* slightly larger font size */
-    padding: 0.5rem 1rem; /* padding for better hit area */
-    cursor: pointer; /* Change cursor to pointer on hover */
-    text-align: center; /* Center align text for a balanced look */
-    display: flex; /* use flexbox for layout */
-    justify-content: center; /* center content */
-    background-color: #ffffff; /* Light background color for better contrast */
-    text-transform: uppercase; /* Uppercase for emphasis */
-    padding-bottom: 0px;
-    margin-bottom: 0; /* remove extra space below */
-    padding-top: 50px;
-    backdrop-filter: blur(10px); /* Blur effect for background */
-} 
 
 .top-utility {
     position: relative; /* Fix position to viewport */
@@ -98,6 +56,13 @@ details > summary {
     height: var(--top-nav-height); /* Set height from variable */
     background-color: #ffffff; /* Light background color for better contrast */
     z-index: 4000; /* Ensure it appears above other content */
+}
+summary.utility-menu-button {
+    list-style: none; /* Remove default list styling */
+    width: 100%; /* let buttons size naturally */
+    margin-top: 20px   ; /* spacing between buttons */
+    margin-bottom: 20px; /* spacing between buttons */
+    background-color: none; /* transparent background */
 }
 
 .utility-menu-toggle .top-utility-menu {
@@ -120,11 +85,20 @@ details > summary {
     flex-direction: row;        /* horizontal row */
     justify-content: center;    /* center items */
     align-items: center;
-    gap: 0.5rem;                /* spacing between buttons */
-    margin: 0;
+    gap: 0.5rem;        
+    margin-top: 10px;        /* spacing between buttons */
+    margin-bottom: 50px;
     padding: 0;
     list-style: none;
     margin-bottom: 0; /* remove extra space below */
+    background-color: #ffffff19;
+}
+
+.top-utility-menu ul
+{
+    margin: 0, 0, 0, 10px; /* slight margin above */
+    padding: 0;
+    list-style: none;
 }
 
 /* ensure each item centers its content and has no extra margin */
@@ -158,22 +132,22 @@ details > summary {
 }
  
 .utility-menu-button {
-    font-size: 1.25rem; /* slightly larger font size */
+    font-size: 1.5rem; /* slightly larger font size */
     font-weight: 600; /* make summary text bold */
-    padding: 0.5rem 1rem; /* padding for better hit area */
     cursor: pointer; /* Change cursor to pointer on hover */
     text-align: center; /* Center align text for a balanced look */
     display: flex; /* use flexbox for layout */
     justify-content: center; /* center content */
-    text-transform: uppercase; /* Uppercase for emphasis */
     border: none; /* remove default border */
     box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
-    margin-bottom: 0; /* remove extra space below */
+    margin-top: 50px;        /* spacing between buttons */
+    margin-bottom: 50px; /* remove extra space below */
     padding-bottom: 0px;
-    padding-top: 50px;
-    color: #215a8f; /* White text for contrast */
+    margin-top: 1vh;
+    padding-top: 3vh;
+    color: #215a8f; /* blue text for contrast */
     background-color: #ffffff;
-    backdrop-filter: blur(10px); /* Blur effect for background */
+    width: 100%; /* let buttons size naturally */
 }   
 
 .utility-menu-button:hover {
@@ -312,6 +286,7 @@ details > summary {
     height: 100vh; /* Full height for the menu */
     position: fixed; /* Fix position to viewport */
     top: 0%; /* Start from the top */
+    text-align: center; /* Center align text for a balanced look */
     right: -100%; /* Align to the right */
     z-index: 100; /* Ensure it appears above other content */
     transition: all 0.2s ease-in-out; /* Smooth transition for menu appearance */
@@ -379,7 +354,117 @@ details > summary {
 /* MAIN CONTENT -------------------------------------------------------------------------------------------- */
 
 main {
-padding-top: 5%;
+    padding-top: 0px; /* Remove top padding to eliminate extra space */
+    flex: 1; /* Allow main to grow and fill available space */
+    width: 100%; /* Full width */
+    max-width: 100%; /* Prevent exceeding full width */
+    margin: 0 auto; /* Center the main content */
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+}
+
+
+
+
+/* Styling for main heading */
+h1.section-title
+{
+    color: #000000;
+    font-size: 4rem; 
+    font-style: normal;
+    text-align: center;
+    text-shadow: 3px 3px 5px #000000; /* Add a drop shadow effect for emphasis */
+    font-weight: 700; /* Make it bold for emphasis */
+    margin: auto; /* Center the heading */
+    margin-bottom: 0.5rem; /* Add space below main heading for better readability */
+    text-transform: none; /* Remove uppercase transformation for sub-headings */
+    width: 100%;
+}
+
+/* Styling for sub-heading */
+h2
+{
+    color: #215a8f;
+    font-size: 3rem; /* Set a moderate font size for sub-headings */
+    font-style :italic; /* Italicize for differentiation */
+    text-align: center;
+    font-weight: 600; /* Make it slightly bolder for differentiation */
+    text-transform: none; /* Remove uppercase transformation for visual prominence */
+    text-shadow: 1px 1px 3px #000000; /* Add a drop shadow effect for emphasis */
+    width: 100%;
+    margin-bottom: 10px; /* Add space below sub-heading for better readability */
+    margin-top: 0%  ;
+}
+
+/* Styling for sub-sub-heading */
+h3
+{
+    color: #000000;
+    font-size: 2rem; 
+    font-weight: 500;
+    text-align: center;
+    margin-top: 0; /* Remove space above sub-sub-heading for better readability */
+    margin-bottom: 10px; /* Add space below sub-sub-heading for better readability */
+}
+h4
+{
+    color: #000000;
+    font-size: 1.5rem; 
+    font-weight: 300;
+    text-align: center;
+    margin-top: 0; /* Remove space above sub-sub-heading for better readability */
+    margin-bottom: 10px; /* Add space below sub-sub-heading for better readability */
+}
+
+/* Styling for paragraph */
+p
+{
+    color: #000000;
+    font-size: 1.25rem; /* Set a font size for paragraphs */
+    margin-bottom: 1.5rem; /* Add space below paragraphs for better readability */
+    font-weight: 200; /* Normal weight for body text */
+    text-align:center; /* Center align text for a balanced look */
+    line-height: 1.6; /* Increase line height for better readability */
+    letter-spacing: 0.5px; /* Slightly increase letter spacing for better readability */
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+    max-width: 800px; /* Limit the maximum width for better readability */
+    margin-left: auto; /* Center the paragraph block */
+    margin-right: auto; /* Center the paragraph block */
+    padding: 0 10px; /* Add horizontal padding for better readability on smaller screens */
+    width: 100%; /* Make paragraph take full width of its container */;
+}
+
+/* Styling for hyperlinks */
+a 
+{
+    color: #215a8f; /* Set link color to match headings */
+    text-decoration: none; /* Removing default underline from links */
+    font-size: 1.25rem; /* Set a font size for links to match body text */
+    font-weight: 700; /* Make links slightly bolder for emphasis */
+    transition: color 0.3s; /* Smooth transition for hover effects */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    text-align: center; /* Center align text for a balanced look */
+}
+
+
+/* Styling for Titled hyperlinks */
+.section-title a
+{
+    color: #000000; /* Set link color to match headings */
+    font-size: 4rem; 
+    font-style: normal;
+    text-align: center;
+    text-shadow: 3px 3px 5px #000000; /* Add a drop shadow effect for emphasis */
+    font-weight: 700; /* Make it bold for emphasis */
+    margin-bottom: 0.5rem; /* Add space below main heading for better readability */
+    text-transform: none; /* Remove uppercase transformation for sub-headings */
+    text-decoration: none; /* Remove default underline from links */
+}
+
+.section-title a:hover
+{
+    color: #215a8f; /* Change color on hover for interactivity */
+    font-weight: 700; /* Make links bold on hover for emphasis */
+    text-decoration: none; /* Remove underline on hover */
 }
 
 /* Hero Section */
@@ -395,7 +480,7 @@ padding-top: 5%;
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
-    margin-top: 0%;
+    margin-top: 50px;
     margin-bottom: 10px;
     padding-top: 0%;
     padding-bottom: 0%;
@@ -497,11 +582,123 @@ section
 /* Styling for buttons */
 button
 {
-    border: #215a8f 5px solid; /* border for emphasis */    
-    box-shadow: 3px 3px 5px #215a8f; /* Add a subtle shadow for depth */
-    background-color: #00000004; /* Set a background color for buttons */
-    color: #215a8f; /* b text for contrast */
+    box-shadow: 3px 3px 5px #000000; /* Add a subtle shadow for depth */
+    background-color: #215a8f; /* Set a background color for buttons */
+    color: #ffffff; /* b text for contrast */
     text-shadow: #ffffff 0px 0px 10px; /* Add a subtle shadow for better readability */
+    padding: 10px 20px; /* Add padding for better usability */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    font-size: 1rem; /* Set a font size for buttons */
+    font-weight: 600; /* Make button text bold for emphasis */
+    transition: background-color 0.3s, box-shadow 0.3s;
+    text-align: center; /* Center align text for a balanced look */
+    text-decoration: none; /* Remove underline from links inside buttons */
+    margin-top: 20px; /* Add space above buttons for better readability */
+    margin-bottom: 20px; /* Add space below buttons for better readability */
+    border-radius: 250px; /* Rounded corners for a modern look */
+    display: inline-block; /* keep buttons inline unless explicitly made block */
+    width: auto; /* let buttons size naturally */
+    min-width: 150px; /* Ensure buttons do not get too small */
+    max-width: 300px; /* Ensure buttons do not get too large */
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+    text-transform: uppercase; /* Uppercase for emphasis */
+    letter-spacing: 1px; /* Slightly increase letter spacing for better readability */
+    margin-left: auto; /* Center the button */
+    margin-right: auto; /* Center the button */
+    display: flex; /* use flexbox for layout */
+    justify-content: center; /* center content */
+}
+
+button:hover
+{
+    background-color: #000000; /* Darker background color on hover */
+    box-shadow: 3px 3px 5px #215a8f; /* Add a shadow effect on hover */
+    color: #ffffff; /* Change text color on hover for interactivity */
+    text-shadow: #ffffff 0px 0px 10px; /* Add a subtle shadow for better readability */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Styling for Education Program Highlights */
+
+/* Styling for Details element in education section */
+
+.education-section-details {
+    margin-top: 1.5rem; /* Add space above details for better readability */
+    margin-bottom: 1.5rem; /* Add space below details for better readability */
+    padding: 10px; /* Add padding for better readability */
+    border: none;
+    width: 100%; /* Make details take full width of its container */
+    background-color: #215a8f;
+    box-shadow: #000000 5px 5px 7px;
+    border-radius: 8px; /* Rounded corners for a modern look */
+    max-width: 800px; /* Limit the maximum width for better readability */
+    margin-left: auto; /* Center the details block */
+    margin-right: auto; /* Center the details block */      
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    justify-content: center; /* Center align text for a balanced look */
+    text-align: left; /* Center align text for a balanced look */
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center items vertically */
+}
+
+.education-section-details[open] > .education-section-summary {
+    display: none; /* Hide summary when details is open */
+}
+
+.education-section-details:hover {
+    transform: scale(1.02); /* Slightly enlarge on hover */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    box-shadow: #215a8f 5px 5px 7px; /* Change shadow color on hover for interactivity */
+}
+
+/* Styling for education section summary */
+.education-section-summary {
+    justify-content: center; /* Center align text for a balanced look */
+    text-align: center; /* Center align text for a balanced look */
+    list-style: none; /* Remove default list styling */
+    border: none;
+    width: 100%; /* Make summary take full width of its container */
+    background-color: #ffffff;
+    box-shadow: #000000 5px 5px 7px;
+    color: #215a8f; /* Change color on hover for interactivity */
+    font-weight: 600; /* Make summary text bold on hover for emphasis */
+    padding: 10px; /* Add padding for better readability */
+    border-radius: 8px; /* Rounded corners for a modern look */
+    margin-bottom: 0%; /* Add space below summary for better readability */
+    font-size: 1.25rem; /* Set a slightly larger font size for summary */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.education-section-summary:hover {
+    font-weight: 700; /* Make summary text bold on hover for emphasis */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    color: #215a8f; /* Change text color on hover for interactivity */  
+    background-color: #000000; /* Change background color on hover */
+    color: #ffffff;
+}
+
+.education-section-details li
+{
+    color: #ffffff;
+    font-size: 1.25rem; /* Set a slightly smaller font size for summary */
+    font-style: italic; /* Italicize for differentiation */
+    font-weight: 500; /* Normal weight for body text */
+    margin-bottom: 0.5rem; /* Add space below summary for better readability */
+    line-height: 1.6; /* Increase line height for better readability */
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+    max-width: 800px; /* Limit the maximum width for better readability */
+    text-align: left; /* Left align text for better readability */
+    padding-left: 10px; /* Add left padding for better readability */
+}
+
+.education-section-details button
+{
+    border: #ffffff 3px solid; /* border for emphasis */    
+    box-shadow: 3px 3px 5px #000000; /* Add a subtle shadow for depth */
+    background-color: #ffffff; /* Set a background color for buttons */
+    color: #215a8f; /* White text for contrast */
+    text-shadow: #000000 0px 0px 1px; /* Add a subtle shadow for better readability */
     padding: 10px 20px; /* Add padding for better usability */
     border: none; /* Remove default border */
     border-radius: 4px; /* Rounded corners for a modern look */
@@ -519,134 +716,27 @@ button
     width: auto; /* let buttons size naturally */
 }
 
-button:hover
+.education-section-details button:hover
 {
-    background-color: #215a8f; /* Darker background color on hover */
+    background-color: #000000; /* Darker background color on hover */
     box-shadow: 3px 3px 5px #000000; /* Add a shadow effect on hover */
     color: #ffffff; /* Change text color on hover for interactivity */
-    scale: 1.05; /* Slightly enlarge on hover */
-}
-
-/* Styling for main heading */
-h1
-{
-    color: #000000;
-    font-size: 4rem; 
-    font-style: normal;
-    text-align: center;
-    text-shadow: 3px 3px 5px #000000; /* Add a drop shadow effect for emphasis */
-    font-weight: 700; /* Make it bold for emphasis */
-    margin-bottom: 0.5rem; /* Add space below main heading for better readability */
-    text-transform: none; /* Remove uppercase transformation for sub-headings */
-    width: 100%;
-}
-
-/* Styling for sub-heading */
-h2
-{
-    color: #215a8f;
-    font-size: 3rem; /* Set a moderate font size for sub-headings */
-    font-style :italic; /* Italicize for differentiation */
-    text-align: center;
-    font-weight: 600; /* Make it slightly bolder for differentiation */
-    text-transform: none; /* Remove uppercase transformation for visual prominence */
-    text-shadow: 1px 1px 3px #000000; /* Add a drop shadow effect for emphasis */
-    width: 100%;
-}
-
-/* Styling for sub-sub-heading */
-h3
-{
-    color: #000000;
-    font-size: 2rem; 
-    font-weight: 500;
-    text-align: center;
-}
-
-h4
-{
-    color: #000000;
-    font-size: 1.5rem; 
-    font-weight: 300;
-    text-align: center;
-}
-
-/* Styling for paragraph */
-p
-{
-    color: #000000;
-    font-size: 1.25rem; /* Set a font size for paragraphs */
-    margin-bottom: 1.5rem; /* Add space below paragraphs for better readability */
-    font-weight: 200; /* Normal weight for body text */
-    text-align:center; /* Center align text for a balanced look */
-    line-height: 1.6; /* Increase line height for better readability */
-    letter-spacing: 0.5px; /* Slightly increase letter spacing for better readability */
-    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
-    max-width: 800px; /* Limit the maximum width for better readability */
-    margin-left: auto; /* Center the paragraph block */
-    margin-right: auto; /* Center the paragraph block */
-    padding: 0 10px; /* Add horizontal padding for better readability on smaller screens */
-    width: 100%; /* Make paragraph take full width of its container */;
-}
-
-/* Styling for hyperlinks */
-a 
-{
-    color: #215a8f; /* Set link color to match headings */
-    text-decoration: none; /* Removing default underline from links */
-    font-size: 1.25rem; /* Set a font size for links to match body text */
-    font-weight: 700; /* Make links slightly bolder for emphasis */
-    transition: color 0.3s; /* Smooth transition for hover effects */
+    text-shadow: #ffffff 0px 0px 10px; /* Add a subtle shadow for better readability */
+    transform: scale(1.05); /* Slightly enlarge on hover */
     cursor: pointer; /* Change cursor to pointer on hover */
-    text-align: center; /* Center align text for a balanced look */
 }
-
-
-/* Styling for Titled hyperlinks */
-.section-title a
-{
-    color: #000000; /* Set link color to match headings */
-    font-size: 4rem; 
-    font-style: normal;
-    text-align: center;
-    text-shadow: 3px 3px 5px #000000; /* Add a drop shadow effect for emphasis */
-    font-weight: 700; /* Make it bold for emphasis */
-    margin-bottom: 0.5rem; /* Add space below main heading for better readability */
-    text-transform: none; /* Remove uppercase transformation for sub-headings */
-    text-decoration: none; /* Remove default underline from links */
-}
-
-.section-title a:hover
-{
-    color: #215a8f; /* Change color on hover for interactivity */
-    font-weight: 700; /* Make links bold on hover for emphasis */
-    text-decoration: none; /* Remove underline on hover */
-}
-
-/* Styling for Education List summary element */
-summary
-{
-    cursor: pointer; /* Change cursor to pointer on hover */
-    text-align: center; /* Center align text for a balanced look */
-    font-size: 1.25rem;  /* Set a slightly smaller font size for summary */
-    font-weight: 500; /* Make summary text bold for emphasis */
-    margin-bottom: 1rem; /* Add space below summary for better readability */
-    color: #000000;
-    text-decoration: none; /* Remove default underline from links */
-    transition: all 0.3s ease; /* Smooth transition for hover effects */
-}
-
-summary:hover
-{
-    color: #215a8f; /* Change color on hover for interactivity */
-    font-weight: 700; /* Make summary text bold on hover for emphasis */
-    transition: all 0.3s ease; /* Smooth transition for hover effects */
-}   
 
 /* Styling for list items */
+ul
+{
+    list-style: disc; /* Use disc bullets for unordered lists */
+    list-style-position: inside; /* Position bullets inside the list item */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
 li
 {
-    color: #000000;
     font-size: 1rem; /* Set a slightly smaller font size for summary */
     margin-bottom: 0.5rem; /* Add space below summary for better readability */
     font-weight: 300; /* Normal weight for body text */
@@ -730,28 +820,30 @@ table tfoot {
     box-shadow: 5px 5px 10px #215a8f;/* Add a stronger shadow effect on hover */
 }
 
-/* styling for radio buttons and checkboxes */
-input[type="radio"],
-input[type="checkbox"]
-{
-    margin-right: 10px; /* Add space to the right of radio buttons and checkboxes */
-    transform: scale(2); /* Slightly enlarge for better usability */
-    cursor: pointer; /* Change cursor to pointer on hover */
-    vertical-align: middle; /* Align with text */
-}
 
 /* Styling for form */
+
+.education-section-details[open] > .education-section-summary {
+    display: none; /* Hide summary when details is open */
+}
+
 form
 {
     color: #000000;
     font-size: 1.25rem; /* Set a font size for form text */
-    margin-bottom: 1.5rem; /* Add space below the form for better readability */
-    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
-    max-width: 800px; /* Limit the maximum width for better readability */
+    margin-bottom: 0%; /* Add space below the form for better readability */
     margin-left: auto; /* Center the form */
     margin-right: auto; /* Center the form */
     padding: 0 10px; /* Add horizontal padding for better readability on smaller screens */
-    text-align: center; /* Center align text for a balanced look */
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+    max-width: 800px; /* Limit the maximum width for better readability */
+}
+
+form section
+{
+    margin-bottom: 0%; /* Add space below form sections for better readability */
+    padding: 0%;
+    margin-top: 10px;
 }
 
 form input[type="text"],
@@ -764,9 +856,9 @@ form summary
 {
     width: 100%; /* Make form elements take full width of their container */
     padding: 2px; /* Add padding for better usability */
-    margin-bottom: rem; /* Add space below form elements for better readability */
+    margin-bottom: 12px; /* Add space below form elements for better readability */
     border: 3px solid #000000; /* Add a border to form elements for better visibility */
-    border-radius: 10px; /* Rounded corners for a modern look */
+    border-radius: 8px; /* Rounded corners for a modern look */
     box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
     font-size: 1.25rem; /* Set a font size for form elements */
     font-weight: 300; /* Normal weight for form text */
@@ -780,23 +872,12 @@ form ::placeholder
 {
     color: #0000006a; /* Lighter color for placeholder text */
     opacity: 1; /* Ensure placeholder text is fully opaque */
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 1.25rem; /* Match font size with form elements */
     font-weight: 500; /* Normal weight for placeholder text */
     text-align: center; /* Align placeholder text to the center */
     padding: 0 5px; /* Add horizontal padding for better readability */
 }
 
-
-form summary:hover {
-    background-color: #215a8f;
-    box-shadow: #215a8f 5px 5px 7px;
-    color: #ffffff; /* Change color on hover for interactivity */
-    font-weight: 700; /* Make summary text bold on hover for emphasis */
-    transition: all 0.3s ease; /* Smooth transition for hover effects */
-    scale: 1.05; /* Slightly enlarge on hover */
-    cursor: pointer; /* Change cursor to pointer on hover */
-}
 
 form summary {
     background-color: #ffffff;
@@ -809,6 +890,11 @@ form summary {
     font-weight: 600; /* Make summary text bold for emphasis */
     margin-bottom: 0rem; /* Add space below summary for better readability */
     transition: all 0.3s ease; /* Smooth transition for hover effects */
+    font-size: 1.25rem; /* Set a font size for summary text */
+    text-align: center; /* Center align text for a balanced look */
+    width: 100%; /* Make summary take full width of its container */
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+    display: inline-block; /* keep summary inline unless explicitly made block */
 }
 
 form summary:hover {
@@ -819,6 +905,16 @@ form summary:hover {
     transition: all 0.3s ease; /* Smooth transition for hover effects */
     scale: 1.05; /* Slightly enlarge on hover */
     cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+/* Radio buttons and checkboxes */
+input[type="radio"],
+input[type="checkbox"]
+{
+    margin-right: 10px; /* Add space to the right of radio buttons and checkboxes */
+    transform: scale(2); /* Slightly enlarge for better usability */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    vertical-align: middle; /* Align with text */
 }
 
 /* SECTION BACKGROUNDS --------------------------------------------------------------------------------------------*/
@@ -1018,20 +1114,21 @@ footer {
     padding-top: 0rem;
 }
 
-
 /* MEDIA QUERIES --------------------------------------------------------------------------------------------*/
-
 
 @media (max-width: 1000px) {
   /* sizes */
- 
+
+  .hero {
+    margin-top: 0%;
+  }
 
   /* Full-width fixed toggle bar (open/close) at the very top */
   #check:not(:checked) ~ .open-menu,
   #check:checked ~ .close-menu {
     display: flex !important;
     position: fixed;
-    top: 10px; /* avoids notch on iOS */
+    top: 10px;
     left: 0;
     right: 0;
     height: var(--toggle-height);
@@ -1290,18 +1387,41 @@ footer {
         padding: 1.25rem;
     }
 
-        .footer-col,
-        .footer-col-menu {
-            flex-basis: 100%;
-            align-items: center;
-        }
+    .footer-col,
+    .footer-col-menu {
+        flex-basis: 100%;
+         align-items: center;
     }
 }
+}
+
+@media (max-width: 600px) {
+
+.menu{
+ 
+    width: 40%;
+}
+}
+
 
 /* small screens: reduce button size */
 @media (max-width: 480px) {
-    .profile-btn {
-        padding: 0.35rem 0.6rem;
-        font-size: 0.9rem;
+    
+.profile-btn {
+    padding: 0.35rem 0.6rem;
+    font-size: 0.9rem;
     }
+
+.menu{
+ 
+    width: 40%;
+}
+}
+
+@media (max-width: 400px) {
+    
+.menu{
+ 
+    width: 40%;
+}
 }
