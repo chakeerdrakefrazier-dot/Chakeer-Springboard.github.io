@@ -1,31 +1,28 @@
-CSS STYLE SHEET FOR DIGITAL CV WEBSITE
+/* CSS STYLE SHEET FOR DIGITAL CV WEBSITE */
 
 /* Border Box Sizing */
 * {
-    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
-} 
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 /* Styling for the entire document */
 html, body {
   height: 100%;
-  margin: 0;
-  background-color: #ffffff; 
-  font-family: "Poppins", sans-serif; /* Set a clean, modern font */
-  font-size: 16px; /* Base font size */
-  line-height: 2; /* Increase line height for better readability */
+  background-color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 .wrapper {
   display: flex;
   flex-direction: column;
-  max-width: 100%; /* Full width */
-  min-height: 100vh; /* Full viewport height */
-  padding: 0%; /* Adjust padding as needed */
-  
+  max-width: 100%;
+  min-height: 100vh;
+  padding: 0;
 }
-
 
 /* Remove the large top padding that created the extra space */
 main {
@@ -34,74 +31,56 @@ main {
 
 /* HEADER --------------------------------------------------------------------------------------------*/
 
-/* NAVIGATION BARS */
-
 :root {
     --nav-height: 100px;
-    --top-nav-height: 100px; /* adjust if either navbar has a different height */
+    --top-nav-height: 100px;
+    --toggle-height: 56px;
 }
 
-header {
-    margin-bottom: 20px; /* Space below header for better readability */
-    width: 100%; /* Full width */
-    padding: 0;
-}
-
-
+/* top utility */
 .top-utility {
-    position: relative; /* Fix position to viewport */
-    top: 0; /* Align to top */
-    left: 0; /* Align to left */
-    width: 100%; /* Full width */
-    height: var(--top-nav-height); /* Set height from variable */
-    background-color: #ffffff; /* Light background color for better contrast */
-    z-index: 4000; /* Ensure it appears above other content */
-}
-summary.utility-menu-button {
-    list-style: none; /* Remove default list styling */
-    width: 100%; /* let buttons size naturally */
-    margin-top: 20px   ; /* spacing between buttons */
-    margin-bottom: 20px; /* spacing between buttons */
-    background-color: none; /* transparent background */
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--top-nav-height);
+    background-color: #ffffff;
+    z-index: 4000;
 }
 
+/* summary / utility menu button */
+summary.utility-menu-button {
+    list-style: none;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: transparent;
+}
+
+/* utility menu list (single normalized rule) */
 .utility-menu-toggle .top-utility-menu {
     display: flex;
-    flex-direction: row;        /* horizontal row */
-    justify-content: space-evenly;    /* center items */
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
-    gap: 0.5rem;                /* spacing between buttons */
+    gap: 0.5rem;
     margin: 0;
     padding: 0;
     list-style: none;
-    z-index: 4000; /* Ensure it appears above other content */
-    background-color: #ffffff; /* dark background color for better contrast */
-    backdrop-filter: blur(10px); /* Blur effect for background */
-    box-shadow: #ffffff 0px 0px 15px; /* subtle shadow for depth */
+    z-index: 4000;
+    background-color: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 15px rgba(255,255,255,0.25);
 }
 
-.utility-menu-toggle .top-utility-menu {
-    display: flex;
-    flex-direction: row;        /* horizontal row */
-    justify-content: center;    /* center items */
-    align-items: center;
-    gap: 0.5rem;        
-    margin-top: 10px;        /* spacing between buttons */
-    margin-bottom: 50px;
-    padding: 0;
-    list-style: none;
-    margin-bottom: 0; /* remove extra space below */
-    background-color: #ffffff19;
-}
-
-.top-utility-menu ul
-{
-    margin: 0, 0, 0, 10px; /* slight margin above */
+/* corrected ul selector */
+.top-utility-menu ul {
+    margin: 0 0 0 10px;
     padding: 0;
     list-style: none;
 }
 
-/* ensure each item centers its content and has no extra margin */
+/* menu items */
 .utility-menu-toggle .top-utility-menu li {
     margin: 0;
     padding: 0;
@@ -109,78 +88,66 @@ summary.utility-menu-button {
     align-items: center;
     justify-content: center;
     height: 100%;
-    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
-    list-style: none; /* Remove default list styling */
-    width: auto; /* let items size naturally */
+    box-sizing: border-box;
+    list-style: none;
+    width: auto;
 }
 
-/* anchors get consistent hit area */
+/* anchors */
 .utility-menu-toggle .top-utility-menu li a {
     display: inline-block;
     padding: 0.35rem 0.6rem;
     text-align: center;
-    text-decoration: none; /* Remove default underline from links */
-    color: #000000; /* White text for contrast */
-}  
+    text-decoration: none;
+    color: #000000;
+    transition: transform 0.25s ease, color 0.25s ease;
+}
 
 .utility-menu-toggle .top-utility-menu li a:hover {
-    color: #215a8f; /* Change text color on hover for interactivity */
-    scale: 1.1; /* Slightly enlarge on hover */
-    font-weight: 700; /* Make links bold on hover for emphasis */
-    transition: all 0.3s ease; /* Smooth transition for hover effects */
-    cursor: pointer; /* Change cursor to pointer on hover */
+    color: #215a8f;
+    transform: scale(1.05);
+    font-weight: 700;
+    cursor: pointer;
 }
- 
-.utility-menu-button {
-    font-size: 1.5rem; /* slightly larger font size */
-    font-weight: 600; /* make summary text bold */
-    cursor: pointer; /* Change cursor to pointer on hover */
-    text-align: center; /* Center align text for a balanced look */
-    display: flex; /* use flexbox for layout */
-    justify-content: center; /* center content */
-    border: none; /* remove default border */
-    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
-    margin-top: 50px;        /* spacing between buttons */
-    margin-bottom: 50px; /* remove extra space below */
-    padding-bottom: 0px;
-    margin-top: 1vh;
-    padding-top: 3vh;
-    color: #215a8f; /* blue text for contrast */
-    background-color: #ffffff;
-    width: 100%; /* let buttons size naturally */
-}   
 
-.utility-menu-button:hover {
-    color: #000000; /* Change text color on hover for interactivity */
-    font-weight: 700; /* Make links bold on hover for emphasis */
-    transition: all 0.3s ease; /* Smooth transition for hover effects */
-    cursor: pointer; /* Change cursor to pointer on hover */
-    transform: scale(1.1);
+/* utility button styles */
+.utility-menu-button {
+    font-size: 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    border: none;
+    box-sizing: border-box;
+    padding-top: 3vh;
+    color: #215a8f;
+    background-color: #ffffff;
+    width: 100%;
 }
 
 /* Styling for bottom navigation bar */
 .bottom-nav {
-    position: fixed; /* Fix position to viewport */
-    left: 0; /* Align to left */
-    width: 100%; /* Full width */
-    height: var(--nav-height); /* Set height from variable */
-    background-color: #ffffffca; /* Light background color for better contrast */
-    backdrop-filter: blur(10px); /* Blur effect for background */
-    z-index: 3000; /* Ensure it appears above other content */
-    top: 0%; /* position at top of viewport */
-    color: #000000; /* Text color for better contrast */
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: var(--nav-height);
+    background-color: #ffffffca;
+    backdrop-filter: blur(10px);
+    z-index: 3000;
+    top: 0;
+    color: #000000;
 }
-
 
 .bottom-nav,
 .bottom-nav > .inner {
-    height: var(--nav-height); /* make the row the same height as the nav */
+    height: var(--nav-height);
 }
 
 /* Center all bottom-nav content and center the menu items */
 .bottom-nav .inner {
     display: flex;
-    align-items: center;       /* vertical centering */
+    align-items: center;
     justify-content: center;
     gap: 1rem;
     width: min(1200px, 100%);
@@ -188,28 +155,26 @@ summary.utility-menu-button {
     box-sizing: border-box;
 }
 
-/* keep the left group vertically centered */
+/* left group */
 .bottom-nav .left {
     display: flex;
     align-items: center;
     gap: 0.5rem;
 }
 
-/* ensure logo and tagline are centered inside the left group */
 .bottom-nav .logo1,
 .bottom-nav .tagline {
     display: inline-flex;
     align-items: center;
     height: 100%;
-    line-height: 1;    /* avoid extra vertical space from line-height */
+    line-height: 1;
     margin: 0;
     padding: 0;
 }
 
-/* tweak size if logo text appears too large */
 .bottom-nav .logo1 { font-size: 1rem; font-weight: 600; }
 
-/* Ensure left/center/right behave as centered flex children */
+/* center/right groups */
 .bottom-nav .left,
 .bottom-nav .center,
 .bottom-nav .right {
@@ -218,43 +183,41 @@ summary.utility-menu-button {
     justify-content: center;
 }
 
-/* center the UL and its list items */
+/* bottom nav ul */
 .bottom-nav .bottom-nav-bar {
     display: flex;
     gap: 0.6rem;
     margin: 0;
     padding: 0;
     list-style: none;
-    justify-content: space-evenly; /* spread out the menu items */
+    justify-content: space-evenly;
     align-items: center;
     width: auto;
 }
 
-/* remove accidental margins from list items */
 .bottom-nav .bottom-nav-bar li {
-    margin: 3px 3px 3px 3px;
-    padding: 1px 3px 1px 3px;
+    margin: 3px;
+    padding: 1px 3px;
     display: inline-flex;
     align-items: center;
 }
 
 .bottom-nav .bottom-nav-bar li a {
-    text-decoration: none; /* Remove default underline from links */
-    color: #215a8f; /* dark text color for better contrast */
-    font-weight: 700; /* medium weight for better readability */
-    padding: 0rem 0rem; /* padding for better hit area */
-    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    text-decoration: none;
+    color: #215a8f;
+    font-weight: 700;
+    padding: 0.25rem 0.5rem;
+    transition: transform 0.25s ease, color 0.25s ease;
 }
 
 .bottom-nav .bottom-nav-bar li a:hover {
-    color: #000000; /* Change text color on hover for interactivity */
-    font-weight: 900; /* Make links bold on hover for emphasis */
-    scale: 1.1; /* Slightly enlarge on hover */
-    transition: all 0.3s ease; /* Smooth transition for hover effects */
-    cursor: pointer; /* Change cursor to pointer on hover */
+    color: #000000;
+    font-weight: 900;
+    transform: scale(1.03);
+    cursor: pointer;
 }
 
-/* tighten social icons spacing */
+/* social icons spacing */
 .bottom-nav .nav-social-icons,
 .bottom-nav .nav-social-icons a {
     display: inline-flex;
@@ -265,105 +228,76 @@ summary.utility-menu-button {
 }
 
 .bottom-nav .nav-social-icons a {
-    color: #000000; /* dark icons for contrast */
-    text-decoration: none; /* Remove default underline from links */
+    color: #000000;
+    text-decoration: none;
 }
 
 .bottom-nav .nav-social-icons a:hover {
-    color: #215a8f; /* Change text color on hover for interactivity */
-    scale: 1.1; /* Slightly enlarge on hover */
-    transition: all 0.3s ease; /* Smooth transition for hover effects */
-    cursor: pointer; /* Change cursor to pointer on hover */
+    color: #215a8f;
+    transform: scale(1.05);
+    transition: transform 0.3s ease, color 0.3s ease;
+    cursor: pointer;
 }
 
-/* Menu styling */
-.menu{
-    display: flex; /* Use flexbox for layout */
-    flex-direction: column; /* Stack menu items vertically */
-    align-items: left; /* Center align items */
-    justify-content: center; /* Center items vertically */
+/* Menu (off-canvas) */
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 40%;
-    height: 100vh; /* Full height for the menu */
-    position: fixed; /* Fix position to viewport */
-    top: 0%; /* Start from the top */
-    text-align: center; /* Center align text for a balanced look */
-    right: -100%; /* Align to the right */
-    z-index: 100; /* Ensure it appears above other content */
-    transition: all 0.2s ease-in-out; /* Smooth transition for menu appearance */
-    list-style: none; /* Remove default list styling */
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    text-align: center;
+    right: -100%;
+    z-index: 100;
+    transition: right 0.22s ease;
+    list-style: none;
     background-color: #ffffffe8;
-    backdrop-filter: blur(5px); /* Blur effect for background */
-
+    backdrop-filter: blur(5px);
 }
 
 .menu li {
-    /* removed default list bullets and left padding so hamburger list is clean */
     list-style: none;
-    margin: 0.5rem 0;     /* vertical spacing between menu items */
-    padding-left: 0;     /* remove the left padding that showed bullets */
-    text-transform: uppercase; /* Uppercase for emphasis */
-    font-weight: 600; /* Make menu text bold for emphasis */
-    font-size: 1.5rem; /* Larger font size for better readability */
-    width: 100%; /* Make list items take full width of the menu */
+    margin: 0.5rem 0;
+    padding-left: 0;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.2rem;
 }
 
-.menu li a {
-    text-decoration: none; /* Remove default underline from links */
-    padding: 0.5rem 1rem; /* padding for better hit area */
-    width: 100%; /* Make links take full width of the list item */
-}
-
-.menu li a:hover {
-    color: #000000; /* Change text color on hover for interactivity */
-    scale: 1.1; /* Slightly enlarge on hover */
-    font-weight: 700; /* Make links bold on hover for emphasis */
-    transition: all 0.3s ease; /* Smooth transition for hover effects */
-    cursor: pointer; /* Change cursor to pointer on hover */
-}
-
-.menu li button {
-    text-decoration: none; /* Remove default underline from links */
-}
-
-
-.open-menu , .close-menu {
-    position: absolute; /* Position absolutely within the nav bar */
-    cursor: pointer; /* Change cursor to pointer */
-    font-size: 1.5rem; /* Increase size for better visibility */
-    display: none; /* Hide by default, shown on small screens */
-    background-color: crimson;
+/* open/close icons */
+.open-menu, .close-menu {
+    position: absolute;
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: none;
 }
 
 .open-menu {
-    top: 50%;  
-    right: 20px; /* Position from the right */
-    transform: translateY(-50%); /* Center vertically */
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
 }
 
-.close-menu
-{
-    top: 20px;  
-    right: 20px; /* Position from the right */
-}
-    
-#check {
-    display: none; /* Hide the checkbox */
+.close-menu {
+    top: 20px;
+    right: 20px;
 }
 
+#check { display: none; }
 
 /* MAIN CONTENT -------------------------------------------------------------------------------------------- */
 
 main {
-    padding-top: 0px; /* Remove top padding to eliminate extra space */
-    flex: 1; /* Allow main to grow and fill available space */
-    width: 100%; /* Full width */
-    max-width: 100%; /* Prevent exceeding full width */
-    margin: 0 auto; /* Center the main content */
-    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+    padding-top: 0;
+    flex: 1;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
 }
-
-
-
 
 /* Styling for main heading */
 h1.section-title
@@ -484,7 +418,7 @@ a
     margin-bottom: 10px;
     padding-top: 0%;
     padding-bottom: 0%;
-    border: #000000 px solid; /* border for emphasis */
+    border: 1px solid #000000; /* border for emphasis */
     box-shadow: 5px 5px 7px #000000; /* Add a subtle shadow for depth */
     border-radius: 8px; /* Rounded corners for a modern look */
 }
@@ -590,23 +524,18 @@ button
     cursor: pointer; /* Change cursor to pointer on hover */
     font-size: 1rem; /* Set a font size for buttons */
     font-weight: 600; /* Make button text bold for emphasis */
-    transition: background-color 0.3s, box-shadow 0.3s;
-    text-align: center; /* Center align text for a balanced look */
-    text-decoration: none; /* Remove underline from links inside buttons */
-    margin-top: 20px; /* Add space above buttons for better readability */
-    margin-bottom: 20px; /* Add space below buttons for better readability */
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.2s;
+    text-transform: uppercase; /* Uppercase for emphasis */
     border-radius: 250px; /* Rounded corners for a modern look */
-    display: inline-block; /* keep buttons inline unless explicitly made block */
-    width: auto; /* let buttons size naturally */
+    display: inline-flex; /* keep buttons inline unless explicitly made block */
+    justify-content: center; /* center content */
+    align-items: center;
     min-width: 150px; /* Ensure buttons do not get too small */
     max-width: 300px; /* Ensure buttons do not get too large */
     box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
-    text-transform: uppercase; /* Uppercase for emphasis */
     letter-spacing: 1px; /* Slightly increase letter spacing for better readability */
     margin-left: auto; /* Center the button */
     margin-right: auto; /* Center the button */
-    display: flex; /* use flexbox for layout */
-    justify-content: center; /* center content */
 }
 
 button:hover
@@ -623,33 +552,19 @@ button:hover
 /* Styling for Details element in education section */
 
 .education-section-details {
-    margin-top: 1.5rem; /* Add space above details for better readability */
-    margin-bottom: 1.5rem; /* Add space below details for better readability */
-    padding: 10px; /* Add padding for better readability */
-    border: none;
-    width: 100%; /* Make details take full width of its container */
+    margin: 1.5rem auto;
+    padding: 10px;
+    width: 100%;
     background-color: #215a8f;
-    box-shadow: #000000 5px 5px 7px;
+    box-shadow: 0 5px 7px rgba(0,0,0,0.3);
     border-radius: 8px; /* Rounded corners for a modern look */
     max-width: 800px; /* Limit the maximum width for better readability */
-    margin-left: auto; /* Center the details block */
-    margin-right: auto; /* Center the details block */      
-    transition: all 0.3s ease; /* Smooth transition for hover effects */
-    justify-content: center; /* Center align text for a balanced look */
-    text-align: left; /* Center align text for a balanced look */
-    display: flex; /* Use flexbox for alignment */
-    align-items: center; /* Center items vertically */
+    transition: transform 0.3s ease;
+    display: block;
+    text-align: left;
 }
 
-.education-section-details[open] > .education-section-summary {
-    display: none; /* Hide summary when details is open */
-}
-
-.education-section-details:hover {
-    transform: scale(1.02); /* Slightly enlarge on hover */
-    cursor: pointer; /* Change cursor to pointer on hover */
-    box-shadow: #215a8f 5px 5px 7px; /* Change shadow color on hover for interactivity */
-}
+.education-section-details[open] > .education-section-summary { display: none; }
 
 /* Styling for education section summary */
 .education-section-summary {
@@ -716,16 +631,6 @@ button:hover
     width: auto; /* let buttons size naturally */
 }
 
-.education-section-details button:hover
-{
-    background-color: #000000; /* Darker background color on hover */
-    box-shadow: 3px 3px 5px #000000; /* Add a shadow effect on hover */
-    color: #ffffff; /* Change text color on hover for interactivity */
-    text-shadow: #ffffff 0px 0px 10px; /* Add a subtle shadow for better readability */
-    transform: scale(1.05); /* Slightly enlarge on hover */
-    cursor: pointer; /* Change cursor to pointer on hover */
-}
-
 /* Styling for list items */
 ul
 {
@@ -775,7 +680,7 @@ table tfoot {
     border: 1px solid #215a8f; /* Add borders to table cells for better visibility */
     padding: 10px; /* Add padding for better readability */
     text-align: left; /* Left align text for better readability */
-    font-size: 1rem; /* Set a slightly smaller font size for table text */
+    font-size: 1rem; /* Set a font size for table text */
     color: #ffffff;
     font-weight: 200; /* Make header text bold for emphasis */
 }
@@ -812,7 +717,7 @@ table tfoot {
     border-radius: 8px; /* Rounded corners for a modern look */
     box-shadow: 5px 5px 7px #000000;
     transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
-    object-fit: fill; /* <-- added space + semicolon */
+    object-fit: cover; /* <-- added space + semicolon */
 }
 .project-gallery img:hover
 {
@@ -823,8 +728,22 @@ table tfoot {
 
 /* Styling for form */
 
-.education-section-details[open] > .education-section-summary {
+.form-details[open] > .form-summary {
     display: none; /* Hide summary when details is open */
+}
+
+form button {
+    margin-top: 10px; /* Add space above buttons for better readability */
+    margin-bottom: 10px; /* Add space below buttons for better readability */
+    display: inline-block; /* Ensure buttons are inline-block for proper spacing */
+    text-align: center; /* Center align text for a balanced look */
+    text-decoration: none; /* Remove underline from links inside buttons */
+    border-radius: 250px; /* Rounded corners for a modern look */   
+    width: auto; /* let buttons size naturally */
+    justify-content: center; /* center content */
+    align-items: center;    
+    min-width: 150px; /* Ensure buttons do not get too small */
+    max-width: 300px; /* Ensure buttons do not get too large */ 
 }
 
 form
@@ -855,22 +774,22 @@ form select,
 form summary
 {
     width: 100%; /* Make form elements take full width of their container */
-    padding: 2px; /* Add padding for better usability */
+    padding: 8px; /* Add padding for better usability */
     margin-bottom: 12px; /* Add space below form elements for better readability */
     border: 3px solid #000000; /* Add a border to form elements for better visibility */
     border-radius: 8px; /* Rounded corners for a modern look */
     box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
     font-size: 1.25rem; /* Set a font size for form elements */
     font-weight: 300; /* Normal weight for form text */
-    background-color: #0000000e; /* Dark background color for better contrast */
+    background-color: rgba(0,0,0,0.06); /* Dark background color for better contrast */
     color: #000000; /* black text for contrast */
-    box-shadow: 5px 5px 7px #000000;
+    box-shadow: 5px 5px 7px rgba(0,0,0,0.2);
     transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition for focus effects */
 }
 
 form ::placeholder
 {
-    color: #0000006a; /* Lighter color for placeholder text */
+    color: #0000006b; /* Lighter color for placeholder text */
     opacity: 1; /* Ensure placeholder text is fully opaque */
     font-size: 1.25rem; /* Match font size with form elements */
     font-weight: 500; /* Normal weight for placeholder text */
@@ -884,16 +803,12 @@ form summary {
     color: #215a8f;
     padding: 0.5rem 1rem;
     border: 3px solid #000000;
-    box-shadow: #000000 5px 5px 7px;
     border-radius: 10px;
     cursor: pointer; /* Change cursor to pointer on hover */
     font-weight: 600; /* Make summary text bold for emphasis */
-    margin-bottom: 0rem; /* Add space below summary for better readability */
-    transition: all 0.3s ease; /* Smooth transition for hover effects */
-    font-size: 1.25rem; /* Set a font size for summary text */
-    text-align: center; /* Center align text for a balanced look */
     width: 100%; /* Make summary take full width of its container */
     box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+    text-align: center; /* Center align text for a balanced look */
     display: inline-block; /* keep summary inline unless explicitly made block */
 }
 
@@ -990,7 +905,7 @@ section.footer-hero-section {
 .profile-link:hover .profile-btn {
     background: #215a8f;
     box-shadow: 0 6px 18px #215a8f;
-    transition: all 0.s ease;
+    transition: all 0.2s ease; /* fixed invalid "0.s" value */
     color: #ffffff;
 }
 
@@ -1015,7 +930,7 @@ section.footer-hero-section {
 }
 
 
-/* FOOTER --------------------------------------------------------------------------------------------*/
+/* FOOTER ----------------------------------------------------------------------*/
 
 /* Footer: two centered columns, UL items stacked vertically and centered with copyright centered full-width at bottom */
 
@@ -1114,7 +1029,9 @@ footer {
     padding-top: 0rem;
 }
 
-/* MEDIA QUERIES --------------------------------------------------------------------------------------------*/
+
+/* MEDIA QUERIES -----------------------------------------------------------------------*/
+
 
 @media (max-width: 1000px) {
   /* sizes */
@@ -1126,41 +1043,34 @@ footer {
   /* Full-width fixed toggle bar (open/close) at the very top */
   #check:not(:checked) ~ .open-menu,
   #check:checked ~ .close-menu {
-    display: flex !important;
+    display: flex; /* show the toggle */
+    justify-content: center; /* center the icon */
+    align-items: center; /* center the icon */
     position: fixed;
-    top: 10px;
+    top: 25px;
     left: 0;
     right: 0;
     height: var(--toggle-height);
-    align-items: center;
-    justify-content: center;
     z-index: 4200; /* highest so icon remains clickable above everything */
     padding: 0;
-    
   }
+  
   /* icon size/color */
   #check:not(:checked) ~ .open-menu i,
   #check:checked ~ .close-menu i {
     color: #215a8f /* blue for contrast */;
-    text-shadow: #f5f5f5 0px 0px 10px;
-    border: 3px #ffffff solid; /* border for emphasis */
-    border-radius: 50px; /* rounded corners for a modern look */
-    padding: 20px;
-    box-shadow: 3px 3px 5px #000000; 
-    margin-top: 20px;
-    margin-bottom: 20px;/* Add a subtle shadow for depth */
-    background-color: #ffffff;
-    
-    border-bottom: 3px solid #215a8f; /* border for emphasis */
+    border-radius: 100px; /* rounded corners for a modern look */
+    font-size: 3rem; /* icon size */  
+    margin-bottom: 20px;/* Add a subtle shadow for depth */    
     transition: all 0.3s ease; /* Smooth transition for hover effects */
+    padding-top: 10px;
   }
 
   #check:not(:checked) ~ .open-menu i,
   #check:checked ~ .close-menu :hover {
     cursor: pointer; /* Change cursor to pointer on hover */
     transition: all 0.3s ease; /* Smooth transition for hover effects */
-    color: #ffffff;
-    background-color: #215a8f; /* blue for contrast */
+    color: #215a8f;
   }
 
   /* Fixed nav directly below the toggle bar */
@@ -1259,7 +1169,7 @@ footer {
     } 
 
     .herocontent {
-        width: calc(100vh - var(--nav-height) - px);
+        width: calc(100vh - var(--nav-height) - 20px); /* removed invalid "- px" */
         height: calc(100vh - var(--nav-height) - 20px);
     }
 

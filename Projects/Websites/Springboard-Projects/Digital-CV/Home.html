@@ -13,17 +13,17 @@
     <header>
     <!-- Top utility bar -->
     <div class="top-utility">
-        <details class="utility-menu-toggle" role="group" aria-label="Utility menu">
+        <details class="utility-menu-toggle" aria-label="Utility menu">
             <summary class="utility-menu-button" aria-haspopup="true" aria-expanded="false">Explore Menu</summary>
             <ul class="top-utility-menu">
-                <li><a style="color: #ffffff; text-shadow: #ffffff; background-color: #215a8f; border-radius: 8%; box-shadow: 0 2px 5px #00000033;" class="button" href="Home.html">Home</a></li>
+                <li><a style="color: #ffffff; background-color: #215a8f;" class="button" href="Home.html">Home</a></li>
                 <li><a class="button" href="About.html">About</a></li>
                 <li><a class="button" href="Education.html">Education</a></li>
                 <li><a class="button" href="Skills.html">Skills</a></li>
                 <li><a class="button" href="Projects.html">Projects</a></li>
                 <li><a class="button" href="Contact.html">Contact</a></li>
             </ul>
-        </details>
+        </details>`
     </div>
 
     <!-- Bottom nav -->
@@ -35,7 +35,7 @@
 
         <div class="center">
           <ul class="bottom-nav-bar">
-            <li><a style="color: #ffffff; text-shadow: #215a8f; background-color: #000000; border-radius: 8%; box-shadow: 0 2px 5px #215a8f;" class="button" href="Home.html">Home</a></li>
+            <li><a style="color: #ffffff; background-color: #000000;" class="button" href="Home.html">Home</a></li>
             <li><a class="button" href="About.html">About</a></li>
             <li><a class="button" href="Education.html">Education</a></li>
             <li><a class="button" href="Skills.html">Skills</a></li>
@@ -62,7 +62,7 @@
     <!-- Off-canvas menu (optional) -->
     <nav class="menu" aria-hidden="true">
         <ul>
-        <li><a style="color: #ffffff; text-shadow: #ffffff; background-color: #215a8f; border-radius: 8%; box-shadow: 0 2px 5px #000000;" href="Home.html">Home</a></li>
+        <li><a style="color: #ffffff; background-color: #215a8f; " href="Home.html">Home</a></li>
         <li><a href="About.html">About</a></li>
         <li><a href="Education.html">Education</a></li>
         <li><a href="Skills.html">Skills</a></li>
@@ -75,7 +75,7 @@
     <main>
         
      <!-- HERO SECTION -->
-    <section class="hero" role="region" aria-label="Hero">
+    <section class="hero" aria-label="Hero">
         <div class="hero-overlay">
             <div class="hero-content">
                 <h1 class="hero-title">Digital-CV</h1>
@@ -110,13 +110,13 @@
             </div>
         </section>
 
-     <!-- EDUCATION ---------------------------------------------------------------------------->
+     <!-- EDUCATION -->
         <section class="education-section">
             <h1 class="section-title"><a href="Education.html">Education</a></h1>
             <h2 class="h2-section-title">Springboard Software Development</h2>
             <h3 class="h3-section-title">2025-2026 | Career program</h3>
                 <p>I successfully completed an intensive Software Engineering program, mastering HTML, CSS, JavaScript, while developing and deploying multiple projects, earning a Certificate of Completion. During my time at Springboard, I gained valuable skills and knowledge that have prepared me for a successful career in software engineering.</p>
-                    <details class="education-section-details education-menu-toggle" role="group" aria-label="Education details">
+                    <details class="education-section-details education-menu-toggle" aria-label="Education details">
 
                         <summary class="education-section-summary">Click Here to view the key program highlights</summary>
                             
@@ -258,6 +258,7 @@
                     <img src="Profile3.png" alt="LinkedIn profile photo" class="profile-image2">
                     <span class="profile-btn">Connect</span>
                 </a>
+            </div>
         </section>
 
      <!-- CONTACT -->
@@ -269,7 +270,7 @@
 
                      <div class="radio-buttons">
 
-                         <details class="form-details" role="group" aria-label="Contact form">
+                         <details class="form-details" aria-label="Contact form">
 
                             <summary class="form-summary">Contact Form</summary>
 
@@ -287,8 +288,6 @@
                                             <input type="radio" name="option" value="collaboration"> Collaboration</label><br>
                                         <label>
                                             <input type="radio" name="option" value="other"> Other</label><br>
-                                </section>
-                                <section>
                                         <label for="name"></label><br>
                                             <input required placeholder="Name*" id="name" type="text" name="name" size="40"><br>
                                         <label for="email"></label><br>
@@ -297,53 +296,54 @@
                                             <input required placeholder="Phone Number*" id="phone" type="tel" name="phone" size="40"><br>
                                         <label for="organization"></label><br>
                                             <input placeholder="Organization" id="organization" type="text" name="organization" size="40"><br>                       
-                                        <label for="Website"></label> <br>
+                                        <label for="Website"></label><br>
                                             <input placeholder="Website" id="Website" type="url" name="website" size="40"><br>
                                         <label for="message"></label><br>
                                             <textarea placeholder="Type your message here" id="message" name="message" cols="70" rows="10"></textarea><br>
                                                 <button type="submit">Send</button>
-                                    </section>
-                            </details>
+                                </section>
                             </div>
-                        </form>
+                        </details>
+                    </div>
+                 </form>
         </section>
     </main>
 
     <!-- FOOTER -->
     <footer>
-      <section class="footer-hero-section">
-    
-      <div class="footer-inner">
-        <div class="footer-col footer-social">
-              <h4 class="footer-summary"><a href="Contact.html">Contact</a></h4>
-                <div class="social-media-links">
-                <ul>
-                    <li><a href="https://www.linkedin.com/in/chakeer-drake-frazier/" target="_blank" rel="noopener">LinkedIn</a></li>
-                    <li><a href="https://www.instagram.com/chakeerdrakefrazier/" target="_blank" rel="noopener">Instagram</a></li>
-                    <li><a href="https://github.com/chakeerdrakefrazier-dot" target="_blank" rel="noopener">GitHub</a></li>
-                    <li><a href="mailto:chakeer.drakefrazier@gmail.com">Email</a></li>
-                </ul>
+        <section class="footer-hero-section">
+            <div class="footer-inner">
+                <div class="footer-col footer-social">
+                    <h4 class="footer-summary"><a href="Contact.html">Contact</a></h4>
+                    <div class="social-media-links">
+                        <ul>
+                            <li><a href="https://www.linkedin.com/in/chakeer-drake-frazier/" target="_blank" rel="noopener">LinkedIn</a></li>
+                            <li><a href="https://www.instagram.com/chakeerdrakefrazier/" target="_blank" rel="noopener">Instagram</a></li>
+                            <li><a href="https://github.com/chakeerdrakefrazier-dot" target="_blank" rel="noopener">GitHub</a></li>
+                            <li><a href="mailto:chakeer.drakefrazier@gmail.com">Email</a></li>
+                        </ul>
+                    </div>
                 </div>
-        </div>
-
-        <div class="footer-col-menu">
-            <h4 class="footer-summary"><a href="home.html">Home</a></h4>
-                <ul>
-                    <li><a href="About.html">About</a></li>
-                    <li><a href="Education.html">Education</a></li>
-                    <li><a href="Skills.html">Skills</a></li>
-                    <li><a href="Projects.html">Projects</a></li>
-                </ul>
-        </div>
+                    <div class="footer-col-menu">
+                        <h4 class="footer-summary"><a href="home.html">Home</a></h4>
+                            <ul>
+                                <li><a href="About.html">About</a></li>
+                                <li><a href="Education.html">Education</a></li>
+                                <li><a href="Skills.html">Skills</a></li>
+                                <li><a href="Projects.html">Projects</a></li>
+                            </ul>
+                    </div>
+                </div>
+        </section>    
     </footer>
-    </section> 
-     <footer>
+
+    <footer>
         <div class="footer-col footer-info">
             <h5>&copy;2025 Chakeer Drake-Frazier | All Rights Reserved</h5>
-         </div>
+        </div>
     </footer>
     
-    </div>   
+    </div>
     </body>
     </html>
 
