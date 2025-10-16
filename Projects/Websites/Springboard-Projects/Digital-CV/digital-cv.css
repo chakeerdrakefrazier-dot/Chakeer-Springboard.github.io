@@ -68,7 +68,7 @@ summary.utility-menu-button {
     padding: 0;
     list-style: none;
     z-index: 4000;
-    background-color: rgba(255,255,255,0.1);
+    background-color: #ffffff1a;
     backdrop-filter: blur(10px);
     box-shadow: 0 0 15px rgba(255,255,255,0.25);
 }
@@ -556,7 +556,7 @@ button:hover
     padding: 10px;
     width: 100%;
     background-color: #215a8f;
-    box-shadow: 0 5px 7px rgba(0,0,0,0.3);
+    box-shadow: 0 5px 7px #0000004d;
     border-radius: 8px; /* Rounded corners for a modern look */
     max-width: 800px; /* Limit the maximum width for better readability */
     transition: transform 0.3s ease;
