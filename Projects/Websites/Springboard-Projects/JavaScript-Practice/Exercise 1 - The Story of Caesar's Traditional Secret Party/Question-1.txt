@@ -1,0 +1,46 @@
+QUESTION 1 - Based on the story of Julius Caesar's secret party and the Caesar Cipher, identify potential variables you would need. Please ensure you use appropriate variable naming conventions in JavaScript.
+
+MY ANSWERS:  
+    let ceasarsName = 'Julius Caesar'
+    let ceasarsHome = 'Rome'
+    let partyLocation = 'Top Secret'
+    let partyDate = 'Top Secret'
+    let partyYear = 'Top Secret'
+    let PartyTime = 'Top Secret'
+    let friendsList = 'Close Friends'
+    let letterA = 'D' 
+    let letterB = 'E'
+    let letterC = 'F'
+    let letterD = 'G'
+    let letterE = 'H'
+    let letterF = 'I'
+    let letterG = 'J'
+    let letterH = 'K'
+    let letterI = 'L'
+    let letterJ = 'M'
+    let letterK = 'N'
+    let letterL = 'O'
+    let letterM = 'P'
+    let letterN = 'Q'
+    let letterO = 'R'
+    let letterP = 'S'
+    let letterQ = 'T'
+    let letterR = 'U'
+    let letterS = 'V'
+    let letterT = 'W'
+    let letterU = 'X'
+    let letterV = 'Y'
+    let letterW = 'Z'
+    let letterX = 'A'
+    let letterY = 'B'
+    let letterZ = 'C'
+
+SPRINGBOARD ANSWER KEY:
+    - `partyLocation`
+    - `shiftValue`
+    - `encryptedMessage`
+    - `decryptedMessage`
+    - `isPartySafe`
+
+
+
