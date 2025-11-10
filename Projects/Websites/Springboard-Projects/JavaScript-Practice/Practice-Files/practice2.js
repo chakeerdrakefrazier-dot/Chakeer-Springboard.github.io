@@ -101,6 +101,7 @@ console.log(isPangram("JavaScript is fun")); // false
 // Pick a random suit from:
 // clubs, spades, hearts, diamonds
 // return both in an object
+// use the function to avoid repeating code
 
 function getCard() {
     const values = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
