@@ -151,6 +151,8 @@
 
                    // console.log ("Encrypted Secret Message:", encryptedSecret); // Would output the encrypted secret message but I do not need it because i am not running the encryption.
 
+                const encryptedSecret = secretMessage;
+
                 const decryptedSecret = decrypt(encryptedSecret, shiftValue); // Decrypt the encrypted secret message
 
                         // PROBLEM: Printed message is decrypting the encrypted message but the original secret message is not being restored correctly. This happens because the encryption process alters the original message by inserting random characters, encrypting an already encrypted message.
@@ -159,7 +161,7 @@
 
                         // CODE USE TO FIX THIS PROBLEM: 
                         
-                            const encryptedSecret = secretMessage;
+                           //  const encryptedSecret = secretMessage;
 
                         // TEST DECRYPTION OF SECRET MESSAGE:
 
