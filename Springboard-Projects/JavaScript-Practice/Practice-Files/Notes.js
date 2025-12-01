@@ -245,22 +245,6 @@ try {
     console.log("Age check completed.");
 }
 
-// /DOM Manipulation/
-// Definition: The Document Object Model (DOM) is a programming interface for web documents. It represents the page so that programs can change the document structure, style, and content.
-
-document.body.style.backgroundColor = "#f0f8ff";
-let heading = document.createElement("h1");
-heading.textContent = "Welcome to My JavaScript Practice!";
-document.body.appendChild(heading);
-let paragraph = document.createElement("p");
-paragraph.textContent = "This paragraph was added using JavaScript.";
-document.body.appendChild(paragraph);
-heading.style.color = "#000000ff";
-paragraph.style.fontSize = "18px";
-paragraph.style.color = "#008535ff";
-paragraph.style.marginTop = "10px";
-
-
 
 // /First class functions/
 // Definition: First-class functions are functions that can be treated like any other variable. They can be assigned to variables, passed as arguments to other functions, and returned from other functions.
@@ -437,3 +421,17 @@ let firstEvenIndex = numbers.findIndex(function(num) { // Using an anonymous fun
 
 console.log("Index of First Even Number using findIndex:", firstEvenIndex); // Log the index of the first even number   
 
+// /DOM Manipulation/
+// Definition: The Document Object Model (DOM) is a programming interface for web documents. It represents the page so that programs can change the document structure, style, and content.
+
+document.body.style.backgroundColor = "#f0f8ff";
+let heading = document.createElement("h1");
+heading.textContent = "Welcome to My JavaScript Practice!";
+document.body.appendChild(heading);
+let paragraph = document.createElement("p");
+paragraph.textContent = "This paragraph was added using JavaScript.";
+document.body.appendChild(paragraph);
+heading.style.color = "#000000ff";
+paragraph.style.fontSize = "18px";
+paragraph.style.color = "#008535ff";
+paragraph.style.marginTop = "10px";
