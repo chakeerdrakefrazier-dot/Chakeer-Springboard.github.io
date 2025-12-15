@@ -7,12 +7,24 @@ console.log("This is my first JavaScript code!");
 const alphabet = "abcdefghijklmnopqrstuvwxyz"; 
 console.log(alphabet);
 
+
+// let, const, var
+// Definition: These are keywords used to declare variables in JavaScript. 'let' and 'const' are block-scoped, while 'var' is function-scoped. 'const' is used for variables that should not be reassigned.
+
+let variableLet = "Let can be reassigned"; // Block-scoped variable
+const variableConst = "Const cannot be reassigned"; // Block-scoped constant
+var variableVar = "Var can be reassigned and is function-scoped"; // Function-scoped variable
+
+console.log(variableLet);
+console.log(variableConst);
+console.log(variableVar);
+
 // /Variables and Data Types/
 // Definition: A variable is a named storage that can hold a value. Data types specify the type of data that can be stored in a variable, such as strings, numbers, and booleans.
 
-let myName = "Chakeer Drake-Frazier";
-let myAge = 30;
-let isStudent = true;
+let myName = "Chakeer Drake-Frazier"; // String data type
+let myAge = 30; // Number data type
+let isStudent = true; // Boolean data type
 
 console.log("Name:", myName);
 console.log("Age:", myAge);
