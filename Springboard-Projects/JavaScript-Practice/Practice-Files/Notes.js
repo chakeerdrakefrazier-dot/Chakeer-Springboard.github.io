@@ -13,7 +13,7 @@ console.log(alphabet);
 
 let variableLet = "Let can be reassigned"; // Block-scoped variable
 const variableConst = "Const cannot be reassigned"; // Block-scoped constant
-var variableVar = "Var can be reassigned and is function-scoped"; // Function-scoped variable
+var variableVar = "Var can be reassigned and is function-scoped"; // Function-scoped variable but should NEVER be used in modern code
 
 console.log(variableLet);
 console.log(variableConst);
@@ -62,6 +62,51 @@ function square(number) { // Function that returns the square of a number
 
 let squaredValue = square(4);
 console.log("Squared Value:", squaredValue);
+
+// Callback Functions
+// Definition: A callback function is a function that is passed as an argument to another function and is executed after some operation has been completed.
+
+function processNumber(num, callback) { // Function that processes a number and calls a callback
+    let result = num * 2; // Double the number
+    callback(result); // Call the callback with the result
+}
+
+processNumber(5, function(result) { // Passing an anonymous function as a callback
+    console.log("Processed Result:", result); // Log the processed result
+});
+
+// /Higher-Order Functions/
+// Definition: A higher-order function is a function that takes another function as an argument or returns a function as its result.
+function createAdder(x) { // Function that returns another function
+    return function(y) {
+        return x + y;
+    };
+}   
+let addFive = createAdder(5); // Create a function that adds 5
+let sumWithFive = addFive(10); // Call the returned function with 10
+console.log("Sum with Five:", sumWithFive); // Log the result
+
+// /Arrow Functions/
+// Definition: Arrow functions are a shorter syntax for writing functions in JavaScript. They are often used for anonymous functions.
+
+const add = (x, y) => { // Arrow function that adds two numbers
+    return x + y; // Return the sum
+};
+
+let additionResult = add(3, 7); // Call the arrow function
+console.log("Addition Result using arrow function:", additionResult); // Log the result
+
+const multiply = (x, y) => x * y; // Concise arrow function that multiplies two numbers
+
+let multiplicationResult = multiply(4, 6); // Call the concise arrow function
+console.log("Multiplication Result using concise arrow function:", multiplicationResult); // Log the result 
+
+// /Function Syntax compared to Arrow Function Syntax/
+function subtract(x, y) { // Traditional function syntax
+    return x - y; // Return the difference
+}
+
+const subtractArrow = (x, y) => x - y; // Arrow function syntax 
 
 // /Arrays and Loops/
 // Definition: An array is a collection of items stored at contiguous memory locations. A loop is a programming construct that repeats a block of code as long as a specified condition is true.
@@ -287,11 +332,11 @@ displayMessage(greet); // Using the displayMessage function to display a greetin
 // /Functions in Variables/
 // Definition: Functions can be assigned to variables, allowing them to be passed around and invoked later.
 
-let multiply = function(x, y) { // Assigning a function to a variable
+let multiplyFn = function(x, y) { // Assigning a function to a variable
     return x * y; // Return the product
 };
-
-let productResult = multiply(4, 5); // Call the function using the variable
+displayMessage(multiplyFn);
+let productResult = multiplyFn(4, 5); // Call the function using the variable
 console.log("Product Result using function in variable:", productResult); // Log the result 
 
 // /returning Functions from Functions/
