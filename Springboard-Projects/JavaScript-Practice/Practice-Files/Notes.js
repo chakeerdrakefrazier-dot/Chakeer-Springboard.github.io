@@ -8,7 +8,7 @@ const alphabet = "abcdefghijklmnopqrstuvwxyz";
 console.log(alphabet);
 
 
-// let, const, var
+// let, const, var/
 // Definition: These are keywords used to declare variables in JavaScript. 'let' and 'const' are block-scoped, while 'var' is function-scoped. 'const' is used for variables that should not be reassigned.
 
 let variableLet = "Let can be reassigned"; // Block-scoped variable
@@ -63,7 +63,17 @@ function square(number) { // Function that returns the square of a number
 let squaredValue = square(4);
 console.log("Squared Value:", squaredValue);
 
-// Callback Functions
+// Anonymous Functions/
+// Definition: Anonymous functions are functions that are defined without a name. They are often used as arguments to other functions or assigned to variables.
+
+let multiplyAnonymous = function(x, y) { // Assigning an anonymous function to a variable
+    return x * y; // Return the product
+};
+
+let multiplicationResultAnonymous = multiplyAnonymous(3, 4); // Call the anonymous function using the variable
+console.log("Multiplication Result using anonymous function:", multiplicationResultAnonymous); // Log the result
+
+// Callback Functions/
 // Definition: A callback function is a function that is passed as an argument to another function and is executed after some operation has been completed.
 
 function processNumber(num, callback) { // Function that processes a number and calls a callback
@@ -108,6 +118,11 @@ function subtract(x, y) { // Traditional function syntax
 
 const subtractArrow = (x, y) => x - y; // Arrow function syntax 
 
+// Arrow Function Shortcuts
+// If the function body contains only a single expression, you can omit the curly braces and the 'return' keyword, as shown in the subtractArrow function above.
+
+const subtractArrowShort = (x, y) => x - y; // Shortened arrow function
+
 // /Arrays and Loops/
 // Definition: An array is a collection of items stored at contiguous memory locations. A loop is a programming construct that repeats a block of code as long as a specified condition is true.
 
@@ -132,14 +147,68 @@ console.log("Person's Name:", person.name); // Accessing object properties
 console.log("Person's Age:", person.age); // Accessing object properties
 console.log("Is Person a Student?:", person.isStudent); // Accessing object properties
 
-// /if statement example/
-// Definition: An if statement is used to execute a block of code only if a specified condition is true.
+// Object Enhancement - Shorthand Property Names
+// Definition: When the property name and variable name are the same, you can use shorthand syntax to define object properties.
 
-if (person.isStudent) {
-    console.log(person.name + " is a student.");
-} else {
-    console.log(person.name + " is not a student.");
+
+// After:
+let name = "John";
+let age = 30;
+let isStudentLocal = true;
+
+let anotherPerson = {
+    name,
+    age,
+    isStudent: isStudentLocal
+};
+
+console.log("Another Person Object:", anotherPerson);
+
+// Object Enhancement - Shorthand Methods
+// Definition: You can define methods in an object using shorthand syntax without the 'function' keyword.
+// Note: Do NOT use arrow functions here
+
+let calculator = {
+    add: function(x, y) {
+        return x + y;
+    },
+    subtract: function(x, y) {
+        return x - y;
+    },
+    multiply: function(x, y) {
+        return x * y;
+    },
+    divide: function(x, y) {
+        return x / y;
+    }
+};
+
+console.log("Calculator Add:", calculator.add(20, 500));
+console.log("Calculator Subtract:", calculator.subtract(20, 5));
+console.log("Calculator Multiply:", calculator.multiply(6, 7));
+console.log("Calculator Divide:", calculator.divide(40, 8));
+
+// Object Enhancement - Computed Property Names
+// Definition: You can use computed property names to define object properties dynamically. This means you can use an expression enclosed in square brackets [] as the property name.
+
+let dynamicKey = "age"; // variable to hold the property name
+let anotherPersonComputed = { 
+    name: "John", // regular property
+    [dynamicKey]: 30, // computed property name
+    isStudent: true // regular property
+}; // 'age' property is created using the value of dynamicKey variable
+
+console.log("Another Person Object:", anotherPersonComputed);
+
+// Computed property name using function
+function getPropertyName() {
+    return "isEmployed"; // returns the property name
 }
+let personWithComputedProperty = {
+    name: "John",
+    [getPropertyName()]: true // computed property name using function
+};
+console.log("Person with Computed Property:", personWithComputedProperty);
 
 // /Conditional Statements AKA If-Else Statements/
 // Definition: Conditional statements are used to perform different actions based on different conditions.
@@ -151,6 +220,15 @@ if (myAge < 18) { // Check if the person is a minor
 } else { // The person is a senior citizen
     console.log(myName + " is a senior citizen.");
 }   
+
+// /if statement example/
+// Definition: An if statement is used to execute a block of code only if a specified condition is true.
+
+if (person.isStudent) {
+    console.log(person.name + " is a student.");
+} else {
+    console.log(person.name + " is not a student.");
+}
 
 // /Comparison Operators/
 // Definition: Comparison operators are used to compare two values and return a boolean result (true or false).
@@ -185,7 +263,7 @@ if (anotherTestValue) { // Check if anotherTestValue is truthy
     console.log("The value is falsy.");
 }
 
-// Logical Operators
+// Logical Operators/
 // Definition: Logical operators are used to combine multiple conditions in conditional statements.
 // NOT (!), AND (&&), OR (||)
 
@@ -306,7 +384,7 @@ try {
 // /First class functions/
 // Definition: First-class functions are functions that can be treated like any other variable. They can be assigned to variables, passed as arguments to other functions, and returned from other functions.
 
-function add(a, b) { // Function that adds two numbers
+function addNumbers(a, b) { // Function that adds two numbers (renamed to avoid duplicate identifier)
     return a + b; // Return the sum
 }
 
@@ -492,3 +570,50 @@ heading.style.color = "#000000ff";
 paragraph.style.fontSize = "18px";
 paragraph.style.color = "#008535ff";
 paragraph.style.marginTop = "10px";
+
+
+// /Rest and Spread Operators/
+// Definition:
+
+// The rest operator (...) allows a function to accept an indefinite number of arguments as an array.
+
+// Rest Operator Example
+function sumAll(...numbers) { // Using rest operator to accept multiple arguments
+    return numbers.reduce((acc, curr) => acc + curr, 0); // Sum all numbers
+}
+
+let totalSum = sumAll(1, 2, 3, 4, 5); // Call the function with multiple arguments
+console.log("Total Sum using rest operator:", totalSum); // Log the total sum
+
+// The spread operator (...) allows an iterable such as an array to be expanded in places where zero or more arguments or elements are expected.
+
+// Spread Operator Example
+let array1 = [1, 2, 3];
+let array2 = [4, 5, 6];
+
+let combinedArray = [...array1, ...array2]; // Using spread operator to combine arrays
+console.log("Combined Array using spread operator:", combinedArray); // Log the combined array
+
+// /Spread Operator in Function Calls/
+// Definition: The spread operator can also be used to expand an array into individual elements when calling a function.
+
+function multiplyThreeNumbers(x, y, z) { // Function that multiplies three numbers
+    return x * y * z; // Return the product
+}
+
+let numbersArray = [2, 3, 4];
+
+let productOfThree = multiplyThreeNumbers(...numbersArray); // Using spread operator to pass array elements as arguments
+console.log("Product of Three Numbers using spread operator:", productOfThree); // Log the product  
+
+// /Spread Arrays/
+// Definition: The spread operator can be used to create a shallow copy of an array or to concatenate multiple arrays.
+
+let originalArray = [10, 20, 30];
+let copiedArray = [...originalArray]; // Creating a shallow copy using spread operator
+console.log("Copied Array using spread operator:", copiedArray); // Log the copied array
+
+let additionalArray = [40, 50];
+let concatenatedArray = [...originalArray, ...additionalArray]; // Concatenating arrays using spread operator
+console.log("Concatenated Array using spread operator:", concatenatedArray); // Log the concatenated array  
+
