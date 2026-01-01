@@ -210,6 +210,108 @@ let personWithComputedProperty = {
 };
 console.log("Person with Computed Property:", personWithComputedProperty);
 
+// /Object Destructuring/
+// Definition: Object destructuring is a syntax that allows you to extract properties from an object and assign them to variables in a concise way.
+
+let student = { // Object representing a student
+    name: "Alice",
+    age: 22,
+    major: "Computer Science", 
+    school: "Arizona University" // additional property
+};
+
+// Destructuring assignment
+let { name: studentName, age: studentAge, major: studentMajor, ...others } = student; // Extract properties and collect the rest using rest operator
+
+console.log("Student Name:", studentName); // Log the student's name
+console.log("Student Age:", studentAge); // Log the student's age
+console.log("Student Major:", studentMajor); // Log the student's major
+console.log("Original Student Object:", student); // Log the original object
+console.log("Other Properties:", others); // Log the remaining properties
+
+// /Default Values in Destructuring/
+// Definition: You can provide default values for variables when destructuring an object. If the property does not exist in the object, the default value will be assigned to the variable.
+
+let { name: studentNameDef, age: studentAgeDef, major: studentMajorDef, gpa = 4.0 } = student; // 'gpa' does not exist in student object, so default value 4.0 is used
+
+console.log("Student Name with Default:", studentNameDef); // Log the student's name
+console.log("Student Age with Default:", studentAgeDef); // Log the student's age
+console.log("Student Major with Default:", studentMajorDef); // Log the student's major
+console.log("Student GPA with Default:", gpa); // Log the student's GPA
+
+// /Array Destructuring/
+// Definition: Array destructuring is a syntax that allows you to extract values from an array and assign them to variables in a concise way.
+// Note: Value assignment is based on the position of elements in the array.
+
+let numbers = [1, 2, 3, 4, 5]; // Array of numbers
+let [first, second, ...rest] = numbers; // Extract first two elements and collect the rest
+
+console.log("First Number:", first);
+console.log("Second Number:", second);
+console.log("Rest of the Numbers:", rest);
+
+const friends = [ // Array of friend objects
+    {name: 'Drake', years: 2},
+    {name: 'Alice', years: 3},
+    {name: 'Bob', years: 4},
+    {name: 'Charlie', years: 1} // use rest operator to collect remaining elements
+];
+
+console.log("First Friend's Name:", friends[0].name);
+console.log("Second Friend's Name:", friends[1].name);
+console.log("Third Friend's Name:", friends[2].name);
+console.log("Rest of the Friends:", rest);
+
+
+// /Function Destructuring/
+// Definition: Function destructuring is a technique where you can extract values from an array or object returned by a function and assign them to variables in a concise way.
+
+function getUserInfo() { // Function that returns an object with user information
+    return {
+        id: 1,
+        name: "John Doe",
+        email: "john.doe@example.com"
+    };
+} // Function returns an object
+
+let { id, name: userName, email } = getUserInfo(); // Destructure the returned object and alias name to userName
+
+console.log("User ID:", id);
+console.log("User Name:", userName); 
+console.log("User Email:", email);
+
+// /Nested Destructuring/
+// Definition: Nested destructuring allows you to extract values from nested objects or arrays in a concise way.
+
+let user = {
+    id: 1,
+    name: "John Doe",
+    email: "john.doe@example.com",
+    address: {
+        street: "123 Main St",
+        city: "Anytown",
+        country: "USA"
+    }
+};
+
+let { id: userId, name: userNameNested, email: userEmail, address: { street, city, country } } = user;
+
+console.log("User ID:", userId);
+console.log("User Name:", userNameNested);
+console.log("User Email:", userEmail);
+console.log("User Address:", street, city, country);
+
+// /Destructing Swap/
+// Definition: You can use destructuring to swap the values of two variables without needing a temporary variable.
+
+let x = 5; // Initial value of x
+let y = 10; // Initial value of y
+
+[x, y] = [y, x]; // Swap the values
+
+console.log("X:", x); // Log the swapped value of x
+console.log("Y:", y); // Log the swapped value of y
+
 // /Conditional Statements AKA If-Else Statements/
 // Definition: Conditional statements are used to perform different actions based on different conditions.
 
@@ -464,7 +566,7 @@ setTimeout(() => {
 // /Anonymous Functions/
 // Definition: Anonymous functions are functions that are defined without a name. They are often used as arguments to other functions or assigned to variables.
 
-let numbers = [1, 2, 3, 4, 5]; // Array of numbers
+ // reuse the previously declared 'numbers' array
 
 let squaredNumbers = numbers.map(function(num) { // Using an anonymous function with map
     return num * num; // Return the square of the number
